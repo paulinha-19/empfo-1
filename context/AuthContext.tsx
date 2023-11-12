@@ -4,9 +4,11 @@ import {
   IAuthContext,
   IAuthProvider,
   UserDataType,
+  RegisterData
 } from "../interface/AuthProps";
 import { AuthData } from "../types/auth-data";
-import { signInRequest } from "../services/requests";
+import { RegisterRequest, signInRequest } from "../services/requests";
+import { Alert } from "react-native";
 
 export const AuthContext = createContext({} as IAuthContext);
 export const AuthProvider = ({ children }: IAuthProvider) => {
@@ -34,7 +36,15 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
     await SecureStore.setItemAsync("token", token);
     setUser(data);
   };
-
+  const onRegister = async ({ email, password }: RegisterData) => {
+    const { data } = await RegisterRequest({
+      email,
+      password,
+    });
+    const { message } = data;
+    Alert.alert(message);
+  };
+  
   return (
     <AuthContext.Provider
       value={{
@@ -42,6 +52,7 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
         setUser,
         isAuthenticated,
         signIn,
+        onRegister
       }}
     >
       {children}

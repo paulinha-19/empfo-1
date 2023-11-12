@@ -70,7 +70,7 @@ export const LoginScreen = () => {
         <Animatable.View animation="fadeInLeft" style={styles.headerForm}>
           <Image
             style={styles.logo}
-            source={require("../../assets/login/logo-2.png")}
+            source={require("../../assets/unlogged/logo-2.png")}
           />
           <Text style={styles.textHeader}>EMPFO</Text>
         </Animatable.View>
