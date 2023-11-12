@@ -36,7 +36,6 @@ yarn-error.*
 *.tsbuildinfo
 
 # api
-services/api.ts
 
 # files with api key
 components/GooglePlacesInput/index.tsx
