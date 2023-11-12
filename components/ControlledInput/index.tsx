@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import { Controller, UseControllerProps, FieldValues } from "react-hook-form";
 import {
   TextInput,
@@ -43,6 +43,15 @@ export function ControlledInput<FormType extends FieldValues>({
   borderColorInput,
   ...textInputProps
 }: UseControllerProps<FormType> & AditionalInput) {
+  const [isFocused, setIsFocused] = useState<boolean>(false);
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
   return (
     <Controller
       control={control}
@@ -54,17 +63,21 @@ export function ControlledInput<FormType extends FieldValues>({
               {leftIcon}
             </View>
           )}
-          {label && (
-            <Text style={[labelStyle]}>{label}</Text>
-          )}
+          {label && <Text style={[labelStyle]}>{label}</Text>}
           <TextInput
             {...textInputProps}
             onChangeText={field.onChange}
-            onBlur={field.onBlur}
+            onBlur={handleBlur}
+            onFocus={handleFocus}
             value={field.value}
             placeholderTextColor={placeholderColor}
             style={[
-              { color: inputTextColor, borderColor: borderColorInput },
+              {
+                color: inputTextColor,
+                borderColor: isFocused
+                  ? "#5E17EB"
+                  : borderColorInput,
+              },
               textInputProps.style,
               styles.input,
             ]}
