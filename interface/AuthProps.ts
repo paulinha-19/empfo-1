@@ -14,9 +14,15 @@ export interface IAuthProvider {
   children: ReactNode;
 }
 
+export type RegisterData = {
+  password: string;
+  email: string;
+};
+
 export interface IAuthContext {
   isAuthenticated: boolean;
   signIn: (data: AuthData) => Promise<void>;
+  onRegister: (data: RegisterData) => Promise<void>;
   user: UserDataType | null;
   setUser: React.Dispatch<React.SetStateAction<UserDataType | null>>;
 }

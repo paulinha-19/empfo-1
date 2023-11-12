@@ -24,6 +24,7 @@ type AditionalInput = {
   paddingTop?: number;
   placeholderColor?: string;
   inputTextColor?: string;
+  borderColorInput?: string;
 } & TextInputProps;
 
 export function ControlledInput<FormType extends FieldValues>({
@@ -39,6 +40,7 @@ export function ControlledInput<FormType extends FieldValues>({
   labelStyle,
   placeholderColor,
   inputTextColor,
+  borderColorInput,
   ...textInputProps
 }: UseControllerProps<FormType> & AditionalInput) {
   return (
@@ -52,7 +54,9 @@ export function ControlledInput<FormType extends FieldValues>({
               {leftIcon}
             </View>
           )}
-          {label && <Text style={[labelStyle]}>{label}</Text>}
+          {label && (
+            <Text style={[labelStyle]}>{label}</Text>
+          )}
           <TextInput
             {...textInputProps}
             onChangeText={field.onChange}
@@ -60,7 +64,7 @@ export function ControlledInput<FormType extends FieldValues>({
             value={field.value}
             placeholderTextColor={placeholderColor}
             style={[
-              { color: inputTextColor },
+              { color: inputTextColor, borderColor: borderColorInput },
               textInputProps.style,
               styles.input,
             ]}

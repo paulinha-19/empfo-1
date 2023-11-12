@@ -17,6 +17,16 @@ function Unloged() {
         component={Screens.ForgotPassword}
       />
       <Stack.Screen
+        name="TokenPassword"
+        options={{ headerShown: false }}
+        component={Screens.TokenPassword}
+      />
+      <Stack.Screen
+        name="ResetPassword"
+        options={{ headerShown: false }}
+        component={Screens.ResetPassword}
+      />
+      <Stack.Screen
         name="RegisterAccount"
         options={{ headerShown: false }}
         component={Screens.RegisterAccount}
