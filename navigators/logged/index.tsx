@@ -88,6 +88,11 @@ function Logged() {
         options={{ title: "" }}
         component={Screens.ViolenceAgainstWomen}
       />
+      <Stack.Screen
+        name="PsychologicalSupport"
+        options={{ title: "" }}
+        component={Screens.PsychologicalSupport}
+      />
     </Stack.Navigator>
   );
 }
