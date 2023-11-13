@@ -15,6 +15,7 @@ type LabelStyle = {
   paddingTop?: number;
   paddingRight?: number;
   paddingLeft?: number;
+  paddingStart?: number;
 };
 
 interface CustomInputProps extends TextInputProps {
