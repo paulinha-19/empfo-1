@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Button } from "react-native";
+import { Text } from "react-native";
 import { Screens } from "../../screens/index";
 import { useAuth } from "../../hooks/useAuth";
 
@@ -11,7 +11,9 @@ function Logged() {
       initialRouteName="Home"
       screenOptions={{
         headerRight: () => (
-          <Button onPress={signOut} title="Sair" color="#fff" />
+          <Text onPress={signOut} style={{ color: "#fff" }}>
+            Sair
+          </Text>
         ),
         headerStyle: {
           backgroundColor: "#000",
