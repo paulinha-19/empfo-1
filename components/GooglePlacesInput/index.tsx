@@ -1,0 +1,48 @@
+import React from "react";
+import {
+  GooglePlacesAutocomplete,
+  GooglePlaceDetail,
+} from "react-native-google-places-autocomplete";
+import { LocationObject } from "expo-location";
+import { ListEmptyComponent } from "./ListEmptyComponent";
+
+interface GooglePlacesInputProps {
+  currentLocation?: LocationObject | null | undefined;
+  placeholder: string;
+  onPlaceSelect: (details?: GooglePlaceDetail | null) => void;
+}
+
+const GooglePlacesInput = ({
+  onPlaceSelect,
+  placeholder = "",
+  currentLocation,
+}: GooglePlacesInputProps) => {
+  return (
+    <GooglePlacesAutocomplete
+      placeholder={placeholder}
+      minLength={2}
+      listViewDisplayed="auto"
+      fetchDetails={true}
+      renderDescription={(row) => row.description}
+      onPress={(data, details = null) => {
+        onPlaceSelect(details);
+      }}
+      query={{
+        // Consulta personalizada para a API do Google Places
+        key: `AIzaSyCi3jMMSBrc_XVBaO6suAxyJMQbGyudhfg`,
+        language: "pt-br",
+        radius: "15000",
+        // location: `${
+        //   (currentLocation?.coords.latitude, currentLocation?.coords.altitude)
+        // }`,
+      }}
+      currentLocationLabel="Localização atual"
+      onFail={(error) => alert(error)}
+      enablePoweredByContainer={false}
+      onNotFound={() => console.log("No results")}
+      listEmptyComponent={<ListEmptyComponent />}
+    />
+  );
+};
+
+export default GooglePlacesInput;
