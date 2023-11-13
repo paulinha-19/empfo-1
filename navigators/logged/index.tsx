@@ -29,6 +29,55 @@ function Logged() {
         component={Screens.AskForHelp}
         options={{ title: "Precisa de ajuda?" }}
       />
+       <Stack.Group>
+        <Stack.Screen
+          name="IntimateHealth"
+          component={Screens.IntimateHealth}
+          options={{ title: "Saúde íntima" }}
+        />
+        <Stack.Screen
+          name="MenstrualCycle"
+          component={Screens.MenstrualCycle}
+          options={{ title: "" }}
+        />
+        <Stack.Screen
+          name="IntimateHealthProblem"
+          component={Screens.IntimateHealthProblem}
+          options={{ title: "" }}
+        />
+        <Stack.Screen
+          name="BreastSelfTest"
+          component={Screens.BreastSelfTest}
+          options={{ title: "" }}
+        />
+        <Stack.Group>
+          <Stack.Screen
+            name="AvoidPregnancy"
+            component={Screens.AvoidPregnancy}
+            options={{ title: "" }}
+          />
+          <Stack.Screen
+            name="Men"
+            component={Screens.Men}
+            options={{ title: "" }}
+          />
+          <Stack.Screen
+            name="Woman"
+            component={Screens.Woman}
+            options={{ title: "" }}
+          />
+          <Stack.Screen
+            name="Contraceptive"
+            component={Screens.Contraceptive}
+            options={{ title: "" }}
+          />
+          <Stack.Screen
+            name="Diu"
+            component={Screens.Diu}
+            options={{ title: "" }}
+          />
+        </Stack.Group>
+      </Stack.Group>
     </Stack.Navigator>
   );
 }
