@@ -93,6 +93,11 @@ function Logged() {
         options={{ title: "" }}
         component={Screens.PsychologicalSupport}
       />
+      <Stack.Screen
+        name="FreeCourses"
+        options={{ title: "" }}
+        component={Screens.FreeCourses}
+      />
     </Stack.Navigator>
   );
 }
