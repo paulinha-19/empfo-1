@@ -4,6 +4,7 @@ import { RegisterAccountScreen } from "../navigators/unlogged/RegisterAccountScr
 import { TokenPasswordScreen } from "../navigators/unlogged/TokenPasswordScreen";
 import { ResetPasswordScreen } from "../navigators/unlogged/ResetPasswordScreen";
 import { HomeScreen } from "../navigators/logged/HomeScreen";
+import { AskForHelpScreen } from "../navigators/logged/AskForHelpScreen";
 export const Screens = {
   Login: LoginScreen,
   ForgotPassword: ForgotPasswordScreen,
@@ -12,5 +13,6 @@ export const Screens = {
   RegisterAccount: RegisterAccountScreen,
 
   // user logged
-  Home: HomeScreen
+  Home: HomeScreen,
+  AskForHelp: AskForHelpScreen
 };

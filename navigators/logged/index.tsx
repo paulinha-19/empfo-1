@@ -11,7 +11,7 @@ function Logged() {
       initialRouteName="Home"
       screenOptions={{
         headerRight: () => (
-          <Button onPress={signOut} title="Sair" color="#000" />
+          <Button onPress={signOut} title="Sair" color="#fff" />
         ),
         headerStyle: {
           backgroundColor: "#000",
@@ -23,6 +23,11 @@ function Logged() {
         name="Home"
         component={Screens.Home}
         options={{ title: "" }}
+      />
+      <Stack.Screen
+        name="AskForHelp"
+        component={Screens.AskForHelp}
+        options={{ title: "Precisa de ajuda?" }}
       />
     </Stack.Navigator>
   );
