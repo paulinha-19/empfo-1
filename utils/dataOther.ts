@@ -83,13 +83,13 @@ export const datePsychologicalSupport = [
 export const dataFreeCourses = [
   {
     id: 1,
-    image: require("../assets/courses/cursa.png"),
+    image: require("../assets/logged/cursa.png"),
     name: "Cursa",
     url: "https://play.google.com/store/apps/details?id=com.ionicframework.cursosdegraca",
   },
   {
     id: 2,
-    image: require("../assets/courses/educamais2.png"),
+    image: require("../assets/logged/educamais2.png"),
     name: "Educa+ Brasil",
     url: "https://www.educamaisbrasil.com.br/cursos-gratuitos",
   },
