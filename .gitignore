@@ -38,10 +38,10 @@ yarn-error.*
 # api
 
 # files with api key
-components/GooglePlacesInput/index.tsx
-components/Map/AutoCompleteDirection.tsx
-components/Map/MapViews.tsx
-lib/requests.ts
+# components/GooglePlacesInput/index.tsx
+# components/Map/AutoCompleteDirection.tsx
+# components/Map/MapViews.tsx
+# lib/requests.ts
 
 
 
