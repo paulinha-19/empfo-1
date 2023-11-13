@@ -7,7 +7,6 @@ import {
   Image,
   Keyboard,
   TouchableWithoutFeedback,
-  Alert,
   TouchableOpacity,
 } from "react-native";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
@@ -17,7 +16,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { StackTypes } from "../../types/stack-type";
 import { ControlledInput } from "../../components/ControlledInput";
 import formSchema from "../../schemas/form";
-import { FormData } from "../../types/z-infer";
 import { useAuth } from "../../hooks/useAuth";
 import { AxiosError } from "axios";
 import { RegisterData } from "../../interface/AuthProps";
