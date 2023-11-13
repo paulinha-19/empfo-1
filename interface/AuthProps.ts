@@ -22,6 +22,7 @@ export type RegisterData = {
 export interface IAuthContext {
   isAuthenticated: boolean;
   signIn: (data: AuthData) => Promise<void>;
+  signOut: () => Promise<void>;
   onRegister: (data: RegisterData) => Promise<void>;
   user: UserDataType | null;
   setUser: React.Dispatch<React.SetStateAction<UserDataType | null>>;

@@ -44,6 +44,11 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
     const { message } = data;
     Alert.alert(message);
   };
+
+  const signOut = async () => {
+    await SecureStore.deleteItemAsync("token");
+    setUser(null);
+  };
   
   return (
     <AuthContext.Provider
@@ -52,7 +57,8 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
         setUser,
         isAuthenticated,
         signIn,
-        onRegister
+        onRegister,
+        signOut
       }}
     >
       {children}

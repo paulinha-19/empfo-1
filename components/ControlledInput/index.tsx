@@ -74,9 +74,7 @@ export function ControlledInput<FormType extends FieldValues>({
             style={[
               {
                 color: inputTextColor,
-                borderColor: isFocused
-                  ? "#5E17EB"
-                  : borderColorInput,
+                borderColor: isFocused ? "#5E17EB" : borderColorInput,
               },
               textInputProps.style,
               styles.input,
@@ -121,7 +119,7 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 50,
-    borderWidth: 1,
+    borderWidth: 2,
     paddingLeft: 40,
     fontSize: 16,
   },
