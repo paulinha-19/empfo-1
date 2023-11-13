@@ -15,6 +15,7 @@ import { DiuScreen } from "../navigators/logged/IntimateHealthScreen/AvoidPregna
 import { IntimateHealthProblemScreen } from "../navigators/logged/IntimateHealthScreen/IntimateHealthProblem";
 import { BreastSelfTestScreen } from "../navigators/logged/IntimateHealthScreen/BreastSelfTest";
 import MapScreen from "../navigators/logged/MapScreen";
+import { ViolenceAgainstWomenScreen } from "../navigators/logged/ViolenceAgainstWomenScreen";
 export const Screens = {
   Login: LoginScreen,
   ForgotPassword: ForgotPasswordScreen,
@@ -35,4 +36,5 @@ export const Screens = {
   IntimateHealthProblem: IntimateHealthProblemScreen,
   BreastSelfTest: BreastSelfTestScreen,
   Mapa: MapScreen,
+  ViolenceAgainstWomen: ViolenceAgainstWomenScreen,
 };
