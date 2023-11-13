@@ -31,23 +31,21 @@ export const CardItem = ({
       <View style={styles.rowContainer}>
         <Text style={styles.itemText}>Telefone: </Text>
         {phone.map((item, index: number) => (
-          <TouchableOpacity
-            key={index}
-            onPress={() => openURL(call[index].tel)}
-          >
+          <TouchableOpacity key={index} onPress={() => openURL(call[index].tel)}>
             <Text style={styles.itemText}>{item.number}</Text>
           </TouchableOpacity>
         ))}
       </View>
-      {time ? <Text style={styles.itemText}>Horário: {time}</Text> : null}
+      {time ? (
+        <Text style={styles.itemText}>Horário: {time}</Text>
+      ) : null}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   cardTitle: {
-    fontSize: 16,
-    paddingBottom: 5,
+    fontSize: 14,
     fontWeight: "bold",
     textAlign: "center",
   },

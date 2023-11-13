@@ -111,7 +111,7 @@ export const MenstrualCycleScreen = () => {
           </Text>
           <CustomInput
             label="Qual dia começou sua última menstruação?"
-            labelStyle={{ color: "white", fontSize: 15 }}
+            labelStyle={{ color: "white", fontSize: 15, paddingStart:5 }}
             style={styles.input}
             placeholder="Insira a data no formato dia/mês/ano"
             value={lastMenstruationDate}
@@ -120,7 +120,7 @@ export const MenstrualCycleScreen = () => {
           />
           <CustomInput
             label="Quantos dias costuma durar sua menstruação?"
-            labelStyle={{ color: "white", fontSize: 15, paddingTop: 15 }}
+            labelStyle={{ color: "white", fontSize: 15, paddingTop: 10, paddingStart:5 }}
             style={styles.input}
             placeholder="28 dias"
             value={cycleDuration}
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
   containerContent: {
     flexDirection: "row",
     alignItems: "center",
-    marginVertical: 10,
+    
     gap: 15,
   },
   content: {
