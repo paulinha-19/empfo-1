@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome";
+import { Entypo } from "@expo/vector-icons";
 import AccordionItem from "./AccordionItem";
 
 type AccordionData = {
   title: string;
-  content: { id: number; body: string, text?:string, fonte?: string }[];
+  content: { id: number; body: string; text?: string; fonte?: string }[];
 };
 
 interface AccordionProps {
@@ -32,7 +32,7 @@ export const Accordion = ({ data }: AccordionProps) => {
             onPress={() => toggleItem(section.title)}
           >
             <Text style={styles.sectionTitle}>{section.title}</Text>
-            <Icon
+            <Entypo
               name={
                 expandedItem === section.title ? "chevron-up" : "chevron-down"
               }
@@ -43,7 +43,7 @@ export const Accordion = ({ data }: AccordionProps) => {
           {expandedItem === section.title && (
             <View style={styles.sectionContent}>
               {section.content.map((accordionItem) => (
-                <AccordionItem key={accordionItem.id} item={accordionItem}  />
+                <AccordionItem key={accordionItem.id} item={accordionItem} />
               ))}
             </View>
           )}
