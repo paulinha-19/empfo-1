@@ -83,6 +83,11 @@ function Logged() {
         options={{ title: "Peça ajuda", headerShown: false }}
         component={Screens.Mapa}
       />
+      <Stack.Screen
+        name="ViolenceAgainstWomen"
+        options={{ title: "" }}
+        component={Screens.ViolenceAgainstWomen}
+      />
     </Stack.Navigator>
   );
 }
