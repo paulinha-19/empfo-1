@@ -1,0 +1,133 @@
+import React from "react";
+import {
+  SafeAreaView,
+  Text,
+  Image,
+  StyleSheet,
+  View,
+  ScrollView,
+  Dimensions,
+} from "react-native";
+import ZoomableImage from "../../../../components/ZoomableImage";
+
+export const MenScreen = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      {/* <Animatable.View animation="fadeInLeft" style={styles.logoHome}>
+        <Image
+          style={styles.sizeHeader}
+          source={require("../../../../assets/home/penties.png")}
+        />
+      </Animatable.View> */}
+      <View style={styles.content}>
+        <View style={styles.containerContent}>
+          <Image
+            style={styles.imagesHome}
+            source={require("../../../../assets/logged/esperma.png")}
+          />
+          <Text style={styles.title}>
+            Quer evitar a gravidez? Aprenda aqui!
+          </Text>
+        </View>
+        <View style={styles.infoContainer}>
+          <Image
+            style={styles.imagesHome}
+            source={require("../../../../assets/logged/preservativo-masculino.png")}
+          />
+          <View style={styles.textInfoContainer}>
+            <Text style={{ color: "black", fontSize: 16, fontWeight: "600" }}>
+              Preservativo masculino
+            </Text>
+          </View>
+          <Text style={styles.subtitle}>
+            No preservativo masculino ou camisinha é uma capa de borracha
+            (látex) que, ao ser colocada sobre o pênis, evita a transmissão de
+            infecções sexualmente transmissíveis (IST) e do vírus causador da
+            aids, o HIV. A camisinha pode também evitar a gravidez, agindo assim
+            como um eficiente método contraceptivo.
+          </Text>
+          <Text style={styles.title}>Como usar a camisinha masculina?</Text>
+          <ZoomableImage source={require("../../../../assets/logged/man.png")} />
+          <View style={styles.containerCapation}>
+            <Text style={styles.caption}>
+              Caderneta de Saúde do Adolescente Ministério da Saúde
+            </Text>
+          </View>
+        </View>
+      </View>
+    </SafeAreaView>
+  );
+};
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "black",
+    flex: 1,
+    width: "100%",
+    height: "100%",
+  },
+  containerLogo: {
+    marginLeft: 10,
+    marginTop: 10,
+  },
+  sizeLogo: {
+    width: 50,
+    height: 50,
+  },
+  sizeHeader: {
+    width: 80,
+    height: 80,
+  },
+  logoHome: {
+    alignItems: "center",
+    marginTop: 20,
+  },
+  containerContent: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingTop: 20,
+  },
+  content: {
+    alignItems: "center",
+    width: "100%",
+  },
+  title: {
+    color: "#f4f412",
+    fontSize: 18,
+    fontWeight: "600",
+  },
+  subtitle: {
+    color: "#fff",
+    fontSize: 16,
+    textAlign: "center",
+    marginHorizontal: 50,
+    paddingTop: 30,
+    paddingBottom: 30,
+  },
+  imagesHome: {
+    width: 60,
+    height: 60,
+  },
+  infoContainer: {
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  textInfoContainer: { backgroundColor: "#73bda8", padding: 10 },
+  howUseTitle: {
+    color: "#f4f412",
+    fontSize: 18,
+    fontWeight: "600",
+  },
+  imageInfo: {
+    width: Dimensions.get("screen").width - 200,
+    height: Dimensions.get("screen").height - 600,
+  },
+  containerCapation: {
+    width: "50%",
+  },
+  caption: {
+    color: "#fff",
+    fontSize: 14,
+    textAlign: "center",
+    paddingTop: 10,
+  },
+});
