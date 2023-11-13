@@ -29,7 +29,7 @@ function Logged() {
         component={Screens.AskForHelp}
         options={{ title: "Precisa de ajuda?" }}
       />
-       <Stack.Group>
+      <Stack.Group>
         <Stack.Screen
           name="IntimateHealth"
           component={Screens.IntimateHealth}
@@ -78,6 +78,11 @@ function Logged() {
           />
         </Stack.Group>
       </Stack.Group>
+      <Stack.Screen
+        name="Mapa"
+        options={{ title: "Peça ajuda", headerShown: false }}
+        component={Screens.Mapa}
+      />
     </Stack.Navigator>
   );
 }

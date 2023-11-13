@@ -14,6 +14,7 @@ import { ContraceptiveScreen } from "../navigators/logged/IntimateHealthScreen/A
 import { DiuScreen } from "../navigators/logged/IntimateHealthScreen/AvoidPregnancy/Diu";
 import { IntimateHealthProblemScreen } from "../navigators/logged/IntimateHealthScreen/IntimateHealthProblem";
 import { BreastSelfTestScreen } from "../navigators/logged/IntimateHealthScreen/BreastSelfTest";
+import MapScreen from "../navigators/logged/MapScreen";
 export const Screens = {
   Login: LoginScreen,
   ForgotPassword: ForgotPasswordScreen,
@@ -33,4 +34,5 @@ export const Screens = {
   Diu: DiuScreen,
   IntimateHealthProblem: IntimateHealthProblemScreen,
   BreastSelfTest: BreastSelfTestScreen,
+  Mapa: MapScreen,
 };
