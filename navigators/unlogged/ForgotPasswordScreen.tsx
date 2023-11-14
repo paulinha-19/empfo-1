@@ -37,13 +37,16 @@ export const ForgotPasswordScreen = () => {
   });
 
   const onSubmit = async (data: ForgotPasswordData) => {
-    try {
-      await forgotPasswordRequest(data);
-      reset();
-      navigation.navigate("TokenPassword");
-    } catch (error) {
-      const err = error as AxiosError;
-      return err;
+    // try {
+    //   await forgotPasswordRequest(data);
+    //   reset();
+    //   navigation.navigate("TokenPassword");
+    // } catch (error) {
+    //   const err = error as AxiosError;
+    //   return err;
+    // }
+    if(data.email === "teste@gmail.com"){
+      navigation.navigate("TokenPassword")
     }
   };
 
