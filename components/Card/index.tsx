@@ -5,7 +5,7 @@ import { CardItem } from "./CardItem";
 
 export const CardRoot = () => {
   return (
-    <View>
+    <View style={styles.container}>
       {datePsychologicalSupport.map((location, index) => (
         <View key={index} style={styles.card}>
           {location.content.map((item) => (
@@ -27,6 +27,10 @@ export const CardRoot = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
   card: {
     backgroundColor: "#73bda8",
     margin: 6,
