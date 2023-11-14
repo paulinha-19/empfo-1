@@ -36,9 +36,13 @@ export const ResetPasswordScreen = () => {
   });
 
   const onSubmit = (data: ResetData) => {
-    console.log("Senha resetada: ", data);
-    Alert.alert("Senha alterada");
-    navigation.navigate("Login");
+    if (data.password === "12345678") {
+      Alert.alert("Senha alterada com sucesso");
+      navigation.navigate("Login");
+    }
+    // console.log("Senha resetada: ", data);
+    // Alert.alert("Senha alterada");
+    // navigation.navigate("Login");
   };
   const toggleShowPassword = () => {
     setShowPassword((prevState) => !prevState);

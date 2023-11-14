@@ -8,7 +8,9 @@ import {
   Image,
   Keyboard,
   TouchableWithoutFeedback,
+  Alert,
 } from "react-native";
+import * as SecureStore from "expo-secure-store";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import * as Animatable from "react-native-animatable";
 import { useForm } from "react-hook-form";
@@ -24,7 +26,7 @@ import { AxiosError } from "axios";
 export const LoginScreen = () => {
   const navigation = useNavigation<StackTypes>();
   const [showPassword, setShowPassword] = useState(true);
-  const { signIn } = useAuth();
+  const { signIn, setUser } = useAuth();
 
   const {
     control,
@@ -41,12 +43,27 @@ export const LoginScreen = () => {
   });
 
   const onSubmit = async (data: AuthData) => {
-    try {
-      await signIn(data);
+    // try {
+    //   await signIn(data);
+    //   reset();
+    // } catch (error) {
+    //   const err = error as AxiosError;
+    //   return err;
+    // }
+    if (
+      (data.email === "empfo@gmail.com" && data.password === "12345678") ||
+      (data.email === "teste@gmail.com" && data.password === "12345678")
+    ) {
+      const token = "jwt";
+      const user = {
+        token,
+        message: "Logged in",
+      };
+      await SecureStore.setItemAsync("token", token);
+      setUser(user);
       reset();
-    } catch (error) {
-      const err = error as AxiosError;
-      return err;
+    } else {
+      Alert.alert("Credenciais inválidas");
     }
   };
 
