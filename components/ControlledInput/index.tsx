@@ -111,11 +111,11 @@ const styles = StyleSheet.create({
   },
   iconLeft: {
     left: 8,
-    top: 30,
+    top: 40,
   },
   iconRight: {
     right: 8,
-    top: 30,
+    top: 40,
   },
   input: {
     height: 50,
