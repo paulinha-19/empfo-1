@@ -8,6 +8,7 @@ import {
   Keyboard,
   TouchableWithoutFeedback,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -40,14 +41,22 @@ export const RegisterAccountScreen = () => {
   });
 
   const onSubmit = async (data: RegisterData) => {
-    try {
-      await onRegister(data);
-      console.log("Usuário registrado:", data);
+    // try {
+    //   await onRegister(data);
+    //   console.log("Usuário registrado:", data);
+    //   reset();
+    //   navigation.navigate("Login");
+    // } catch (error) {
+    //   const err = error as AxiosError;
+    //   return err;
+    // }
+    if (
+      (data.email === "empfo@gmail.com" && data.password === "12345678") ||
+      (data.email === "teste@gmail.com" && data.password === "teste123")
+    ) {
+      Alert.alert("Usuário cadastrado com sucesso");
       reset();
       navigation.navigate("Login");
-    } catch (error) {
-      const err = error as AxiosError;
-      return err;
     }
   };
 
@@ -132,7 +141,7 @@ const styles = StyleSheet.create({
   },
   containerImage: {
     alignItems: "center",
-    marginTop: 15
+    marginTop: 15,
   },
   image: {
     width: "50%",
