@@ -4,6 +4,7 @@ import {
   getCurrentPositionAsync,
   watchPositionAsync,
   LocationAccuracy,
+  getLastKnownPositionAsync
 } from "expo-location";
 import { GooglePlace, CustomLocationObject } from "../types/map";
 import MapView from "react-native-maps";
@@ -13,11 +14,12 @@ export async function getMyLocation(
 ) {
   const { status } = await requestForegroundPermissionsAsync();
   if (status !== "granted") {
-    alert("Permissão para acessar a localização foi negada.");
+    alert("Permissão para acessar localização negada.");
     return;
   }
   const currentPosition = await getCurrentPositionAsync();
   setCurrentLocation(currentPosition);
+  console.log("LOCALIZAÇÃO ATUAL", currentPosition);
 }
 
 export async function watchPosition(

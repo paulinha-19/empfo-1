@@ -2,16 +2,13 @@ import React, { useEffect, useState, useRef } from "react";
 import MapView from "react-native-maps";
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
-import { LocationObject } from "expo-location";
-import { View, Pressable, Platform } from "react-native";
+import * as Location from "expo-location";
+import { View, Pressable, Platform, Alert, Linking } from "react-native";
 import GooglePlacesInput from "../../components/GooglePlacesInput";
 import { styles } from "../../styles/map-styles";
 import { GooglePlaceDetail } from "react-native-google-places-autocomplete";
 import { FontAwesome } from "@expo/vector-icons";
-import {
-  getMyLocation,
-  handleUserLocationPress,
-} from "../../lib/map-functions";
+import { handleUserLocationPress } from "../../lib/map-functions";
 import { CustomLocationObject } from "../../types/map";
 import {
   handleSearchHospitals,
@@ -27,7 +24,7 @@ import { StackTypes } from "../../types/stack-type";
 export default function MapScreen() {
   const navigation = useNavigation<StackTypes>();
   const [currentLocation, setCurrentLocation] =
-    useState<LocationObject | null>();
+    useState<Location.LocationObject | null>();
   const [markerLocation, setMarkerLocation] =
     useState<CustomLocationObject | null>(null);
   const [mapReady, setMapReady] = useState(false);
@@ -93,7 +90,25 @@ export default function MapScreen() {
   };
 
   useEffect(() => {
-    getMyLocation(setCurrentLocation);
+    const getPermissions = async () => {
+      const permission = await Location.getForegroundPermissionsAsync();
+      if (!permission.canAskAgain || permission.status === "denied") {
+        Alert.alert(
+          "Por favor conceda acesso a localização para navegar pelo mapa"
+        );
+        Linking.openSettings();
+      } else {
+        if (permission.status === "granted") {
+          let location = await Location.getCurrentPositionAsync({
+            mayShowUserSettingsDialog: true,
+            accuracy: Location.Accuracy.High,
+          });
+          setCurrentLocation(location);
+          console.log("Location: ", location);
+        }
+      }
+    };
+    getPermissions();
   }, []);
 
   return (
@@ -162,24 +177,26 @@ export default function MapScreen() {
           distance && duration ? styles.customUserBottom : null,
         ]}
       >
-        {Platform.OS === "ios" && (
-          <Pressable
-            style={styles.buttonUserLocation}
-            onPress={() =>
-              handleUserLocationPress(
-                currentLocation,
-                mapRef,
-                setMarkerLocation,
-                setMarkers
-              )
-            }
-          >
-            <FontAwesome name="location-arrow" size={30} color="black" />
-          </Pressable>
-        )}
+        <Pressable
+          style={[
+            styles.buttonUserLocation,
+            Platform.OS === "ios" ? styles.shadowIos : styles.shadowAndroid,
+          ]}
+          onPress={() =>
+            handleUserLocationPress(
+              currentLocation,
+              mapRef,
+              setMarkerLocation,
+              setMarkers
+            )
+          }
+        >
+          <FontAwesome name="location-arrow" size={30} color="black" />
+        </Pressable>
         <ButtonDirection
           setMarkerLocation={setMarkerLocation}
           setMarkers={setMarkers}
+          mapRef={mapRef}
         />
       </View>
       <ResultDirections />

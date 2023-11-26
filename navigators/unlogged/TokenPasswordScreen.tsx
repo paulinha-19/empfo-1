@@ -38,7 +38,7 @@ export const TokenPasswordScreen = () => {
 
   const onSubmit = async (data: TokenData) => {
     try {
-    //   await tokenPasswordRequest(data);
+      await tokenPasswordRequest(data);
       reset();
       navigation.navigate("ResetPassword");
     } catch (error) {

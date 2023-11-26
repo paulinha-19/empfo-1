@@ -3,7 +3,6 @@ import { Dimensions, StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -35,9 +34,19 @@ const styles = StyleSheet.create({
     width: "11%",
     height: "150%",
     left: 10,
-    bottom: -350,
+    bottom: -320,
     justifyContent: "center",
     alignItems: "center",
+  },
+  shadowIos: {
+    shadowColor: "#171717",
+    shadowOffset: { width: -2, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+  },
+  shadowAndroid: {
+    elevation: 20,
+    shadowColor: "#52006A",
   },
   buttonDirection: {
     backgroundColor: "#2a7fe0",
@@ -45,7 +54,7 @@ const styles = StyleSheet.create({
     width: "11%",
     height: "150%",
     left: 10,
-    bottom: -280,
+    bottom: -250,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -82,7 +91,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     width: "90%",
     top: 60,
-  }
+  },
 });
 
 export { styles };
