@@ -10,11 +10,15 @@ export const ResultDirections = () => {
         <View style={styles.modalView}>
           {legs?.map((leg, index) => (
             <View key={index}>
-              <Text style={styles.textModalDirections}>
+              <Text style={styles.textDistanceAndDuration}>
                 {`${leg.duration.text} (${leg.distance.text})`}
               </Text>
-              <Text>Origem: {leg.start_address}</Text>
-              <Text>Destino: {leg.end_address}</Text>
+              <Text style={styles.textOriginAndDestination}>
+                Origem: {leg.start_address}
+              </Text>
+              <Text style={styles.textOriginAndDestination}>
+                Destino: {leg.end_address}
+              </Text>
             </View>
           ))}
         </View>
@@ -25,43 +29,19 @@ export const ResultDirections = () => {
 
 const styles = StyleSheet.create({
   centeredView: {
-    flex: 1,
     position: "absolute",
     bottom: 0,
   },
   modalView: {
     backgroundColor: "white",
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
-    padding: 35,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
+    padding: 25,
     width: Dimensions.get("screen").width,
   },
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2,
-  },
-  buttonOpen: {
-    backgroundColor: "#F194FF",
-  },
-  buttonClose: {
-    backgroundColor: "#2196F3",
-  },
-  textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  textModalDirections: {
+  textDistanceAndDuration: {
     fontSize: 16,
+  },
+  textOriginAndDestination: {
+    color: "gray",
+    paddingTop: 10,
   },
 });
