@@ -11,14 +11,22 @@ import { styles } from "../../styles/map-styles";
 import InputDirection from "../Map/InputDirection";
 import { useMapStore } from "../../store/map-directions";
 import { CustomLocationObject } from "../../types/map";
+import { useRef } from "react";
+import MapView from "react-native-maps";
 
 interface ButtonDirectionProps {
   setMarkers: (markers: CustomLocationObject[] | null) => void;
   setMarkerLocation: (marker: CustomLocationObject | null) => void;
+  mapRef: React.RefObject<MapView>;
 }
 
-export const ButtonDirection = ({setMarkers, setMarkerLocation}: ButtonDirectionProps) => {
+export const ButtonDirection = ({
+  setMarkers,
+  setMarkerLocation,
+  mapRef,
+}: ButtonDirectionProps) => {
   const { modalVisible, setModalVisible } = useMapStore();
+  
   const handleCloseModal = () => {
     setModalVisible(true);
   };
@@ -35,9 +43,13 @@ export const ButtonDirection = ({setMarkers, setMarkerLocation}: ButtonDirection
       >
         <View style={style.centeredView}>
           <View style={style.modalView}>
-            <InputDirection setMarkerLocation={setMarkerLocation} setMarkers={setMarkers} />
+            <InputDirection
+              setMarkerLocation={setMarkerLocation}
+              setMarkers={setMarkers}
+              mapRef={mapRef}
+            />
             <Pressable
-              style={[style.button, style.buttonClose]}
+              style={[style.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
             >
               <AntDesign name="left" size={30} color="black" />
@@ -76,26 +88,9 @@ const style = StyleSheet.create({
     width: Dimensions.get("screen").width,
     height: Dimensions.get("screen").height,
   },
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2,
-  },
-  buttonOpen: {
-    backgroundColor: "#F194FF",
-  },
   buttonClose: {
     position: "absolute",
     top: 50,
-    left: 0,
-  },
-  textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: "center",
+    left: 10,
   },
 });
