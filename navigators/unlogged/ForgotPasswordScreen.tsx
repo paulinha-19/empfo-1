@@ -19,9 +19,13 @@ import { ControlledInput } from "../../components/ControlledInput";
 import forgotSchema from "../../schemas/forgot-password";
 import { ForgotPasswordData } from "../../interface/AuthProps";
 import { AxiosError } from "axios";
-import { forgotPasswordRequest } from "../../services/requests";
+import {
+  forgotPasswordRequest
+} from "../../services/requests";
+import { useAuth } from "../../hooks/useAuth";
 
 export const ForgotPasswordScreen = () => {
+  const { forgotPassword} = useAuth();
   const navigation = useNavigation<StackTypes>();
   const {
     control,
@@ -38,7 +42,7 @@ export const ForgotPasswordScreen = () => {
 
   const onSubmit = async (data: ForgotPasswordData) => {
     try {
-      await forgotPasswordRequest(data);
+      await forgotPassword(data);
       reset();
       navigation.navigate("TokenPassword");
     } catch (error) {
@@ -122,7 +126,7 @@ const styles = StyleSheet.create({
     padding: 15,
     backgroundColor: "#5E17EB",
     marginHorizontal: 20,
-    marginTop: 15
+    marginTop: 15,
   },
   textButtonSubmit: {
     color: "white",

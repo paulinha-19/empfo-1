@@ -5,20 +5,12 @@ import {
   Image,
   StyleSheet,
   View,
-  ScrollView,
-  Dimensions,
 } from "react-native";
 import ZoomableImage from "../../../../components/ZoomableImage";
 
 export const WomanScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Animatable.View animation="fadeInLeft" style={styles.logoHome}>
-        <Image
-          style={styles.sizeHeader}
-          source={require("../../../../assets/home/penties.png")}
-        />
-      </Animatable.View> */}
       <View style={styles.content}>
         <View style={styles.containerContent}>
           <Image
@@ -67,22 +59,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
-  containerLogo: {
-    marginLeft: 10,
-    marginTop: 10,
-  },
-  sizeLogo: {
-    width: 50,
-    height: 50,
-  },
-  sizeHeader: {
-    width: 80,
-    height: 80,
-  },
-  logoHome: {
-    alignItems: "center",
-    marginTop: 20,
-  },
   containerContent: {
     flexDirection: "row",
     alignItems: "center",
@@ -102,8 +78,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: "center",
     marginHorizontal: 50,
-    paddingTop: 30,
-    paddingBottom: 30,
+    paddingTop: 20,
+    paddingBottom: 15,
   },
   imagesHome: {
     width: 60,
@@ -114,22 +90,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textInfoContainer: { backgroundColor: "#73BDA8", padding: 10 },
-  howUseTitle: {
-    color: "#f4f412",
-    fontSize: 18,
-    fontWeight: "600",
-  },
-  imageInfo: {
-    width: Dimensions.get("screen").width - 200,
-    height: Dimensions.get("screen").height - 600,
-  },
   containerCapation: {
     width: "50%",
   },
   caption: {
     color: "#fff",
-    fontSize: 14,
+    fontSize: 12,
     textAlign: "center",
-    paddingTop: 10,
+
   },
 });

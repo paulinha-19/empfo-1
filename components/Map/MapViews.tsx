@@ -61,6 +61,7 @@ export const MapViews = ({
       setMapLoading(false);
     }, 1000);
   }, []);
+
   return (
     <View>
       {mapLoading ? (
@@ -77,6 +78,8 @@ export const MapViews = ({
           }}
           showsTraffic={true}
           showsUserLocation={true}
+          showsMyLocationButton={false}
+          followsUserLocation={true}
           onMapReady={() => setMapReady(true)}
         >
           {markerLocation && (

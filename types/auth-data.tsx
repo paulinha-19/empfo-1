@@ -8,5 +8,9 @@ export type TokenData = {
 };
 
 export type ResetData = {
-  password: string;
+  newPassword: string;
+}
+
+export type ForgotPassword = {
+  email: string;
 }

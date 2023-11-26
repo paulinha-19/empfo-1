@@ -6,7 +6,6 @@ import {
   StyleSheet,
   SafeAreaView,
   Image,
-  Alert,
   TouchableOpacity,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
@@ -18,28 +17,41 @@ import { StackTypes } from "../../types/stack-type";
 import { ControlledInput } from "../../components/ControlledInput";
 import resetPasswordSchema from "../../schemas/reset-password";
 import { ResetData } from "../../types/auth-data";
+import {
+  resetPasswordRequest
+} from "../../services/requests";
+import { AxiosError } from "axios";
+import { useAuth } from "../../hooks/useAuth";
 
 export const ResetPasswordScreen = () => {
+  const { email } = useAuth();
   const navigation = useNavigation<any>();
   const [showPassword, setShowPassword] = useState(true);
 
   const {
     control,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<ResetData>({
     mode: "onChange",
     defaultValues: {
-      password: "",
+      newPassword: "",
     },
     resolver: zodResolver(resetPasswordSchema),
   });
 
-  const onSubmit = (data: ResetData) => {
-    console.log("Senha resetada: ", data);
-    Alert.alert("Senha alterada");
-    navigation.navigate("Login");
+  const onSubmit = async (data: ResetData) => {
+    try {
+      await resetPasswordRequest(data, email?.email);
+      reset();
+      navigation.navigate("Login");
+    } catch (error) {
+      const err = error as AxiosError;
+      return err;
+    }
   };
+
   const toggleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
   };
@@ -65,7 +77,7 @@ export const ResetPasswordScreen = () => {
         <View style={styles.containerInput}>
           <ControlledInput
             control={control}
-            name="password"
+            name="newPassword"
             placeholder="Insira sua senha"
             labelStyle={{ fontSize: 18 }}
             placeholderColor="gray"
@@ -80,7 +92,7 @@ export const ResetPasswordScreen = () => {
                 onPress={toggleShowPassword}
               />
             }
-            errorMessage={errors?.password?.message}
+            errorMessage={errors?.newPassword?.message}
             borderColorInput="white"
             inputTextColor="white"
           />

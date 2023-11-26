@@ -17,13 +17,14 @@ import { CustomLocationObject } from "../../types/map";
 interface InputDirectionProps {
   setMarkers: (markers: CustomLocationObject[] | null) => void;
   setMarkerLocation: (marker: CustomLocationObject | null) => void;
+  mapRef: React.RefObject<MapView>;
 }
 
 export default function InputDirection({
   setMarkers,
   setMarkerLocation,
+  mapRef,
 }: InputDirectionProps) {
-  const mapRef = useRef<MapView>(null);
   const {
     destination,
     setShowDirections,
@@ -34,30 +35,38 @@ export default function InputDirection({
     setModalVisible,
   } = useMapStore();
 
-  const moveTo = async (position: LatLng) => {
-    if (position && mapRef.current) {
-      mapRef.current.animateToRegion(
-        {
-          latitude: position.latitude,
-          longitude: position.longitude,
-          latitudeDelta: 0.005,
-          longitudeDelta: 0.005,
-        },
-        1000
-      );
-    }
-  };
-
   const traceRoute = () => {
     if (origin && destination) {
+      console.log("origin: ", origin);
+      console.log("destination: ", destination);
+
       setModalVisible(!modalVisible);
       setMarkerLocation(null);
       setMarkers(null);
       setShowDirections(true);
+
+      // Calcular a região que inclui ambos os pontos
+      const region = {
+        latitude: (origin.latitude + destination.latitude) / 2,
+        longitude: (origin.longitude + destination.longitude) / 2,
+        latitudeDelta: Math.abs(origin.latitude - destination.latitude) + 0.01,
+        longitudeDelta:
+          Math.abs(origin.longitude - destination.longitude) + 0.01,
+      };
       mapRef.current?.fitToCoordinates([origin, destination], {
         edgePadding,
         animated: true,
       });
+      // Aplicar um fator de zoom adicional, se necessário
+      const zoomFactor = 1.5; // Ajuste conforme necessário
+      const adjustedRegion = {
+        latitude: region.latitude,
+        longitude: region.longitude,
+        latitudeDelta: region.latitudeDelta * zoomFactor,
+        longitudeDelta: region.longitudeDelta * zoomFactor,
+      };
+      // Animar para a região ajustada
+      mapRef.current?.animateToRegion(adjustedRegion, 1000);
     }
   };
 
@@ -71,7 +80,6 @@ export default function InputDirection({
       longitude: details?.geometry.location.lng || 0,
     };
     set(position);
-    moveTo(position);
   };
 
   return (

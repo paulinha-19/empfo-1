@@ -65,22 +65,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
-  containerLogo: {
-    marginLeft: 10,
-    marginTop: 10,
-  },
-  sizeLogo: {
-    width: 50,
-    height: 50,
-  },
-  sizeHeader: {
-    width: 80,
-    height: 80,
-  },
-  logoHome: {
-    alignItems: "center",
-    marginTop: 20,
-  },
   containerContent: {
     flexDirection: "row",
     alignItems: "center",
@@ -101,7 +85,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginHorizontal: 50,
     paddingTop: 30,
-    paddingBottom: 30,
+    paddingBottom: 20,
   },
   imagesHome: {
     width: 60,
@@ -126,7 +110,7 @@ const styles = StyleSheet.create({
   },
   caption: {
     color: "#fff",
-    fontSize: 14,
+    fontSize: 12,
     textAlign: "center",
     paddingTop: 10,
   },
