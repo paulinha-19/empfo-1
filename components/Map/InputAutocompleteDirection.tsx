@@ -4,6 +4,7 @@ import {
   GooglePlacesAutocomplete,
 } from "react-native-google-places-autocomplete";
 import { ListEmptyComponent } from "../GooglePlacesInput/ListEmptyComponent";
+import { useFocusedInput } from "../../hooks/useFocusedInput";
 
 type InputAutocompleteProps = {
   label: string;
@@ -16,10 +17,18 @@ function InputAutocompleteDirection({
   placeholder,
   onPlaceSelected,
 }: InputAutocompleteProps) {
+  const { handleBlur, handleFocus, styles } = useFocusedInput({
+    borderColorInput: "#5E17EB",
+  });
+
   return (
     <View>
-      <Text>{label}</Text>
+      <Text style={input.label}>{label}</Text>
       <GooglePlacesAutocomplete
+        textInputProps={{
+          onFocus: () => handleFocus(),
+          onBlur: () => handleBlur(),
+        }}
         minLength={2}
         listViewDisplayed="auto"
         styles={{ textInput: styles.input }}
@@ -42,9 +51,8 @@ function InputAutocompleteDirection({
 }
 export default InputAutocompleteDirection;
 
-const styles = StyleSheet.create({
-  input: {
-    borderColor: "#888",
-    borderWidth: 1,
+const input = StyleSheet.create({
+  label: {
+    paddingBottom: 5,
   },
 });

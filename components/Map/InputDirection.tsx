@@ -1,17 +1,17 @@
-import MapView, { LatLng } from "react-native-maps";
+import MapView from "react-native-maps";
 import {
   StyleSheet,
   View,
   Dimensions,
   Text,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import { GooglePlaceDetail } from "react-native-google-places-autocomplete";
 import Constants from "expo-constants";
-import { useRef } from "react";
 import { useMapStore } from "../../store/map-directions";
 import { edgePadding } from "../../utils/edge-padding-value";
-import InputAutocompleteDirection from "./AutoCompleteDirection";
+import InputAutocompleteDirection from "./InputAutocompleteDirection";
 import { CustomLocationObject } from "../../types/map";
 
 interface InputDirectionProps {
@@ -37,9 +37,6 @@ export default function InputDirection({
 
   const traceRoute = () => {
     if (origin && destination) {
-      console.log("origin: ", origin);
-      console.log("destination: ", destination);
-
       setModalVisible(!modalVisible);
       setMarkerLocation(null);
       setMarkers(null);
@@ -58,15 +55,17 @@ export default function InputDirection({
         animated: true,
       });
       // Aplicar um fator de zoom adicional, se necessário
-      const zoomFactor = 1.5; // Ajuste conforme necessário
+      const zoomFactor = 1.5;
       const adjustedRegion = {
         latitude: region.latitude,
         longitude: region.longitude,
         latitudeDelta: region.latitudeDelta * zoomFactor,
         longitudeDelta: region.longitudeDelta * zoomFactor,
       };
-      // Animar para a região ajustada
       mapRef.current?.animateToRegion(adjustedRegion, 1000);
+    }
+    if (!origin || !destination) {
+      Alert.alert("Insira um local em origem e destino para traçar a rota");
     }
   };
 
@@ -86,14 +85,14 @@ export default function InputDirection({
     <View style={styles.searchContainer}>
       <InputAutocompleteDirection
         label="Origem"
-        placeholder="Insira a origem do local"
+        placeholder="Insira a origem"
         onPlaceSelected={(details) => {
           onPlaceSelected(details, "origin");
         }}
       />
       <InputAutocompleteDirection
         label="Destino"
-        placeholder="Insira a origem do destino"
+        placeholder="Insira o destino"
         onPlaceSelected={(details) => {
           onPlaceSelected(details, "destination");
         }}
@@ -120,18 +119,10 @@ const styles = StyleSheet.create({
     position: "absolute",
     width: "80%",
     padding: 8,
-    borderRadius: 8,
     top: Constants.statusBarHeight,
   },
-  input: {
-    borderColor: "#888",
-    borderWidth: 1,
-  },
-  containerInput: {
-    marginVertical: 20,
-  },
   button: {
-    backgroundColor: "#2a7fe0",
+    backgroundColor: "#5E17EB",
     paddingVertical: 12,
     marginTop: 16,
     borderRadius: 4,
@@ -139,7 +130,6 @@ const styles = StyleSheet.create({
   buttonText: {
     textAlign: "center",
     color: "#fff",
-    fontSize: 18,
+    fontSize: 14,
   },
-  label: {},
 });

@@ -11,7 +11,6 @@ import { styles } from "../../styles/map-styles";
 import InputDirection from "../Map/InputDirection";
 import { useMapStore } from "../../store/map-directions";
 import { CustomLocationObject } from "../../types/map";
-import { useRef } from "react";
 import MapView from "react-native-maps";
 
 interface ButtonDirectionProps {
