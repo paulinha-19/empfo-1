@@ -43,27 +43,12 @@ export const LoginScreen = () => {
   });
 
   const onSubmit = async (data: AuthData) => {
-    // try {
-    //   await signIn(data);
-    //   reset();
-    // } catch (error) {
-    //   const err = error as AxiosError;
-    //   return err;
-    // }
-    if (
-      (data.email === "empfo@gmail.com" && data.password === "12345678") ||
-      (data.email === "teste@gmail.com" && data.password === "12345678")
-    ) {
-      const token = "jwt";
-      const user = {
-        token,
-        message: "Logged in",
-      };
-      await SecureStore.setItemAsync("token", token);
-      setUser(user);
+    try {
+      await signIn(data);
       reset();
-    } else {
-      Alert.alert("Credenciais inválidas");
+    } catch (error) {
+      const err = error as AxiosError;
+      return err;
     }
   };
 

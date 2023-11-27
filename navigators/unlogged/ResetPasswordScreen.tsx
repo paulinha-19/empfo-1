@@ -13,7 +13,6 @@ import { useNavigation } from "@react-navigation/native";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AntDesign } from "@expo/vector-icons";
-import { StackTypes } from "../../types/stack-type";
 import { ControlledInput } from "../../components/ControlledInput";
 import resetPasswordSchema from "../../schemas/reset-password";
 import { ResetData } from "../../types/auth-data";
