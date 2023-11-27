@@ -41,22 +41,14 @@ export const RegisterAccountScreen = () => {
   });
 
   const onSubmit = async (data: RegisterData) => {
-    // try {
-    //   await onRegister(data);
-    //   console.log("Usuário registrado:", data);
-    //   reset();
-    //   navigation.navigate("Login");
-    // } catch (error) {
-    //   const err = error as AxiosError;
-    //   return err;
-    // }
-    if (
-      (data.email === "empfo@gmail.com" && data.password === "12345678") ||
-      (data.email === "teste@gmail.com" && data.password === "teste123")
-    ) {
-      Alert.alert("Usuário cadastrado com sucesso");
+    try {
+      await onRegister(data);
+      console.log("Usuário registrado:", data);
       reset();
       navigation.navigate("Login");
+    } catch (error) {
+      const err = error as AxiosError;
+      return err;
     }
   };
 

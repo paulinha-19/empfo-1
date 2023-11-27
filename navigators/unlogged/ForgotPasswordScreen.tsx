@@ -19,9 +19,6 @@ import { ControlledInput } from "../../components/ControlledInput";
 import forgotSchema from "../../schemas/forgot-password";
 import { ForgotPasswordData } from "../../interface/AuthProps";
 import { AxiosError } from "axios";
-import {
-  forgotPasswordRequest
-} from "../../services/requests";
 import { useAuth } from "../../hooks/useAuth";
 
 export const ForgotPasswordScreen = () => {
