@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
@@ -30,32 +28,24 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "permission": [
-        "ACCESS_FINE_LOCATION",
-        "ACCESS_COARSE_LOCATION"
-      ],
+      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"],
       "package": "com.paulinha19.empfo1",
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyD0xFYq39zmE-wAV3xmMMibLAS_hlWast4"
         }
-      },
-      "web": {
-        "favicon": "./assets/favicon.png"
-      },
-      "extra": {
-        "eas": {
-          "projectId": "2d40ac74-76b5-4a25-8335-f96cf9707967"
+      }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Permitir o $(PRODUCT_NAME) acessar sua localização"
         }
-      },
-      "plugins": [
-        [
-          "expo-location",
-          {
-            "locationAlwaysAndWhenInUsePermission": "Permitir o $(PRODUCT_NAME) acessar sua localização"
-          }
-        ]
       ]
+    ],
+    "web": {
+      "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
