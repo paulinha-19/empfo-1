@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
     if (token) {
       setUser({ token, message: "" });
     } else {
-      console.log("Nenhum token encontrado");
+      console.log("Nenhum usuário logado");
     }
   };
   useEffect(() => {
@@ -57,7 +57,6 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
       email,
     });
     setEmail({ email });
-    console.log("EMAIL:", email);
   };
 
   const signOut = async () => {

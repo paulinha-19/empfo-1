@@ -104,7 +104,7 @@ export default function MapScreen() {
             accuracy: Location.Accuracy.High,
           });
           setCurrentLocation(location);
-          console.log("Location: ", location);
+          console.log(location);
         }
       }
     };

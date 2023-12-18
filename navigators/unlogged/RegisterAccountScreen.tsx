@@ -108,7 +108,7 @@ export const RegisterAccountScreen = () => {
           </View>
           <View style={styles.buttonSubmit}>
             <TouchableOpacity onPress={handleSubmit(onSubmit)}>
-              <Text style={styles.textButtonSubmit}>Entrar</Text>
+              <Text style={styles.textButtonSubmit}>Cadastrar</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.containerCreateAccout}>

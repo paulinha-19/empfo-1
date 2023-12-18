@@ -2,14 +2,14 @@
   "expo": {
     "name": "empfo-1",
     "slug": "empfo-1",
-    "version": "1.0.5",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
@@ -19,11 +19,11 @@
       },
       "config": {
         "usesNonExemptEncryption": false,
-        "googleMapsApiKey": ""
+        "googleMapsApiKey": "AIzaSyD0xFYq39zmE-wAV3xmMMibLAS_hlWast4"
       }
     },
     "android": {
-      "versionCode": 5,
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -32,7 +32,7 @@
       "package": "com.paulinha19.empfo1",
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyCi3jMMSBrc_XVBaO6suAxyJMQbGyudhfg"
+          "apiKey": "AIzaSyD0xFYq39zmE-wAV3xmMMibLAS_hlWast4"
         }
       },
       "web": {

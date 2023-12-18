@@ -3,6 +3,7 @@ import { CustomLocationObject, GooglePlace } from "../types/map";
 import { addMarkersToMap } from "./map-functions";
 import { LocationObject } from "expo-location";
 import { LatLng } from "react-native-maps";
+import { Alert } from "react-native";
 
 export const searchPoliceStations = async (
   currentLocation: LocationObject | null | undefined,
@@ -24,7 +25,7 @@ export const searchPoliceStations = async (
       : currentLocation?.coords.longitude || 0;
 
     const response = await axios.get(
-      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=5000&type=police&key=AIzaSyCi3jMMSBrc_XVBaO6suAxyJMQbGyudhfg`
+      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=5000&type=police&key=AIzaSyD0xFYq39zmE-wAV3xmMMibLAS_hlWast4`
     );
     const filteredPolice: GooglePlace[] = response.data.results.filter(
       (place: GooglePlace) => place.name?.toLowerCase().includes("delegacia")
@@ -39,6 +40,7 @@ export const searchPoliceStations = async (
       addMarkersToMap(places, setMarkers);
     }
   } catch (error) {
+    Alert.alert("Erro ao buscar estações de polícia");
     console.error("Erro ao buscar estações de polícia:", error);
   }
 };
@@ -63,7 +65,7 @@ export const searchHospitals = async (
       : currentLocation?.coords.longitude || 0;
 
     const response = await axios.get(
-      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=5000&type=hospital&key=AIzaSyCi3jMMSBrc_XVBaO6suAxyJMQbGyudhfg`
+      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=5000&type=hospital&key=AIzaSyD0xFYq39zmE-wAV3xmMMibLAS_hlWast4`
     );
     if (response.data.results.length > 0) {
       const places: GooglePlace[] = response.data.results;
@@ -75,6 +77,7 @@ export const searchHospitals = async (
       addMarkersToMap(places, setMarkers);
     }
   } catch (error) {
+    Alert.alert("Erro ao buscar hospitais");
     console.error("Erro ao buscar hospitais:", error);
   }
 };

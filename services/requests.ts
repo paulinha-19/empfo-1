@@ -10,7 +10,7 @@ interface ErrorResponse {
 
 export const signInRequest = async (data: AuthData) => {
   try {
-    const response = await api.post("login?AUTHORIZATION=PRODUCTION", data);
+    const response = await api.post("login?AUTHORIZATION=empfo#2023", data);
     return response;
   } catch (error) {
     const errors = error as AxiosError;
@@ -29,7 +29,7 @@ export const signInRequest = async (data: AuthData) => {
 export const RegisterRequest = async (data: RegisterData) => {
   try {
     const response = await api.post(
-      `registerUsers?AUTHORIZATION=production`,
+      `registerUsers?AUTHORIZATION=empfo#2023`,
       data
     );
     return response;
@@ -51,7 +51,7 @@ export const forgotPasswordRequest = async (data: ForgotPasswordData) => {
     const { email } = data;
     const response = await api.get(`forgotPassword/${email}`, {
       headers: {
-        AUTHORIZATION: "production",
+        AUTHORIZATION: "empfo#2023",
       },
     });
     return response;
@@ -74,7 +74,7 @@ export const tokenPasswordRequest = async (data: TokenData) => {
     const { token } = data;
     const response = await api.get(`forgotWithToken/${token}`, {
       headers: {
-        AUTHORIZATION: "production",
+        AUTHORIZATION: "empfo#2023",
       },
     });
     return response;

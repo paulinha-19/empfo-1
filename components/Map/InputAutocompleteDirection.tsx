@@ -38,7 +38,7 @@ function InputAutocompleteDirection({
           onPlaceSelected(details);
         }}
         query={{
-          key: `AIzaSyCi3jMMSBrc_XVBaO6suAxyJMQbGyudhfg`,
+          key: `AIzaSyD0xFYq39zmE-wAV3xmMMibLAS_hlWast4`,
           language: "pt-BR",
           radius: "30000",
         }}

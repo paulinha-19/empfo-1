@@ -29,12 +29,9 @@ const GooglePlacesInput = ({
       }}
       query={{
         // Consulta personalizada para a API do Google Places
-        key: `AIzaSyCi3jMMSBrc_XVBaO6suAxyJMQbGyudhfg`,
+        key: `AIzaSyD0xFYq39zmE-wAV3xmMMibLAS_hlWast4`,
         language: "pt-br",
         radius: "15000",
-        // location: `${
-        //   (currentLocation?.coords.latitude, currentLocation?.coords.altitude)
-        // }`,
       }}
       currentLocationLabel="Localização atual"
       onFail={(error) => alert(error)}
