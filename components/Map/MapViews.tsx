@@ -3,7 +3,7 @@ import { LocationObject } from "expo-location";
 import MapView, { Marker } from "react-native-maps";
 import { CustomLocationObject } from "../../types/map";
 import { styles } from "../../styles/map-styles";
-import { View, ActivityIndicator } from "react-native";
+import { View, ActivityIndicator, Alert } from "react-native";
 import { useMapStore } from "../../store/map-directions";
 import MapViewDirections from "react-native-maps-directions";
 import { MapDirectionsResponse } from "react-native-maps-directions";
@@ -48,12 +48,9 @@ export const MapViews = ({
     }
   };
 
-  const traceRouteOnStart = (args: any) => {
-    console.log(`Rota iniciada entre"${args.origin}" e "${args.destination}"`);
-  };
-
   const traceRouteOnError = (error: any) => {
-    console.log("ERRO AO TRAÇAR A ROTA", error);
+    Alert.alert("ERRO AO TRAÇAR A ROTA", error);
+    console.log(error);
   };
 
   useEffect(() => {
@@ -113,12 +110,11 @@ export const MapViews = ({
             <MapViewDirections
               origin={origin}
               destination={destination}
-              apikey={`AIzaSyCi3jMMSBrc_XVBaO6suAxyJMQbGyudhfg`}
+              apikey={`AIzaSyD0xFYq39zmE-wAV3xmMMibLAS_hlWast4`}
               strokeColor="#6644ff"
               strokeWidth={4}
               onReady={(args) => traceRouteOnReady(args)}
               language="pt-br"
-              onStart={(args) => traceRouteOnStart(args)}
               onError={(error) => traceRouteOnError(error)}
             />
           )}

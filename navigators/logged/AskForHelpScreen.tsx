@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
     marginRight: "auto",
   },
   cityText: {
-    color: "yellow",
+    color: "#FED74D",
     fontWeight: "700",
     fontSize: 20,
     textAlign: "center",

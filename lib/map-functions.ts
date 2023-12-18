@@ -19,7 +19,6 @@ export async function getMyLocation(
   }
   const currentPosition = await getCurrentPositionAsync();
   setCurrentLocation(currentPosition);
-  console.log("LOCALIZAÇÃO ATUAL", currentPosition);
 }
 
 export async function watchPosition(

@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     padding: 15,
-    backgroundColor: "yellow",
+    backgroundColor: "#FED74D",
   },
   sectionTitle: {
     fontSize: 18,

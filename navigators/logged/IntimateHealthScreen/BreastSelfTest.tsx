@@ -1,9 +1,17 @@
-import React from "react";
-import { SafeAreaView, Text, Image, StyleSheet, View } from "react-native";
+import React, { useState } from "react";
+import {
+  SafeAreaView,
+  Text,
+  Image,
+  StyleSheet,
+  View,
+  ActivityIndicator,
+} from "react-native";
 import * as Animatable from "react-native-animatable";
 import { WebView } from "react-native-webview";
 
 export const BreastSelfTestScreen = () => {
+  const [videoLoaded, setVideoLoaded] = useState<boolean>(false);
   return (
     <SafeAreaView style={styles.container}>
       <Animatable.View animation="fadeInLeft" style={styles.logoHome}>
@@ -21,7 +29,9 @@ export const BreastSelfTestScreen = () => {
           <Text style={styles.title}>Faça o seu auto teste dos seios</Text>
         </View>
       </View>
+      {!videoLoaded && <ActivityIndicator size="large" />}
       <WebView
+        onLoad={() => setVideoLoaded(true)}
         style={styles.containerVideo}
         source={{
           html: '<iframe width="100%" height="50%" src="https://www.youtube.com/embed/z1KanEmGwck?si=u4gH2gmCtV9NA7pl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',

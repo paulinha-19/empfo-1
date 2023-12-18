@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   title: {
-    color: "#f4f412",
+    color: "#FED74D",
     fontSize: 18,
     fontWeight: "600",
   },
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
   },
   buttonTextResult: {
     color: "black",
-    backgroundColor: "yellow",
+    backgroundColor: "#FED74D",
     padding: 15,
     fontSize: 16,
     textAlign: "center",

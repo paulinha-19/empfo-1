@@ -85,7 +85,7 @@ export const ForgotPasswordScreen = () => {
           </View>
           <View style={[styles.containerButtonSubmit]}>
             <TouchableOpacity onPress={handleSubmit(onSubmit)}>
-              <Text style={styles.textButtonSubmit}>Entrar</Text>
+              <Text style={styles.textButtonSubmit}>Enviar</Text>
             </TouchableOpacity>
           </View>
         </View>

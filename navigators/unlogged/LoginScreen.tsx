@@ -26,7 +26,7 @@ import { AxiosError } from "axios";
 export const LoginScreen = () => {
   const navigation = useNavigation<StackTypes>();
   const [showPassword, setShowPassword] = useState(true);
-  const { signIn, setUser } = useAuth();
+  const { signIn } = useAuth();
 
   const {
     control,
