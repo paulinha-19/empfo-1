@@ -11,7 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
@@ -28,7 +30,10 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "permission": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"],
+      "permission": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ],
       "package": "com.paulinha19.empfo1",
       "config": {
         "googleMaps": {
@@ -51,6 +56,11 @@
           }
         ]
       ]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2d40ac74-76b5-4a25-8335-f96cf9707967"
+      }
     }
   }
 }
