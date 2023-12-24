@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, Text, Image, StyleSheet } from "react-native";
+import { SafeAreaView, Text, Image, StyleSheet, View } from "react-native";
 import * as Animatable from "react-native-animatable";
 import { FreeCourses } from "../../components/FreeCourses";
 import { dataFreeCourses } from "../../utils/dataOther";
@@ -13,7 +13,13 @@ export const FreeCoursesScreen = () => {
           source={require("../../assets/logged/curso.png")}
         />
       </Animatable.View>
-      <Text style={styles.title}>Onde buscar cursos gratuitos </Text>
+      <View>
+        <Text style={styles.title}>Onde buscar cursos gratuitos?</Text>
+        <Text style={styles.subtitle}>
+          Escolha a opção que deseja conhecer e seja direcionado (a) para a
+          plataforma do curso
+        </Text>
+      </View>
       <FreeCourses data={dataFreeCourses} />
     </SafeAreaView>
   );
@@ -50,13 +56,20 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   title: {
-    color: "#fff",
+    color: "#FED74D",
     fontSize: 18,
     fontWeight: "600",
     width: "80%",
     textAlign: "center",
     paddingStart: 80,
-    paddingBottom: 40,
+    paddingBottom: 20,
+  },
+  subtitle: {
+    color: "#fff",
+    fontSize: 16,
+    textAlign: "center",
+    marginHorizontal: 50,
+    paddingBottom: 30,
   },
   imagesHome: {
     width: 60,

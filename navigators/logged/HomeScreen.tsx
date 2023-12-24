@@ -9,12 +9,10 @@ import {
 } from "react-native";
 import * as Animatable from "react-native-animatable";
 import { openURL } from "expo-linking";
-import { useAuth } from "../../hooks/useAuth";
 import { useNavigation } from "@react-navigation/native";
 import { StackTypes } from "../../types/stack-type";
 
 export const HomeScreen = () => {
-  const { user } = useAuth();
   const navigation = useNavigation<StackTypes>();
 
   return (
@@ -39,8 +37,8 @@ export const HomeScreen = () => {
               source={require("../../assets/logged/rede-mulher.webp")}
             />
             <Text style={styles.textColor}>
-              Delegacia on-line, botão do pânico, medida protetiva, Centro de
-              Atendimento à Mulher em situação de violência
+              Clique aqui e seja direcionado (a) para a plataforma do
+              Rede Mulher, um aplicativo de atendimento à mulher em situação de violência
             </Text>
           </View>
         </TouchableOpacity>
@@ -109,7 +107,7 @@ export const HomeScreen = () => {
               source={require("../../assets/logged/curso.png")}
             />
             <Text style={styles.textColor}>
-              Quer aprender uma atividade que te traga renda?
+              Quer aprender uma atividade que te traga renda? Clique aqui
             </Text>
           </View>
         </TouchableOpacity>

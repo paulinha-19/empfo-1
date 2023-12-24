@@ -85,12 +85,22 @@ export const dataFreeCourses = [
     id: 1,
     image: require("../assets/logged/cursa.png"),
     name: "Cursa",
+    info: "a google play do aplicativo",
     url: "https://play.google.com/store/apps/details?id=com.ionicframework.cursosdegraca",
   },
   {
     id: 2,
     image: require("../assets/logged/educamais2.png"),
     name: "Educa+ Brasil",
+    info: "o site do",
     url: "https://www.educamaisbrasil.com.br/cursos-gratuitos",
   },
 ];
+
+export const dataAppRedeMulher = {
+  id: 1,
+  image: require("../assets/logged/rede-mulher.webp"),
+  name: "Delegacia on-line, botão do pânico, medida protetiva, Centro de Atendimento à Mulher em situação de violência",
+  info: "a google play do aplicativo Rede Mulher ",
+  url: "https://play.google.com/store/apps/details?id=redemulher.pmerj.rj.gov.br",
+};
