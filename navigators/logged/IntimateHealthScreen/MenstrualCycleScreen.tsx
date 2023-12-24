@@ -9,7 +9,6 @@ import {
   Keyboard,
   TouchableWithoutFeedback,
   Modal,
-  TextInput,
 } from "react-native";
 import { format, parse, isBefore, isValid } from "date-fns";
 import { AntDesign } from "@expo/vector-icons";
