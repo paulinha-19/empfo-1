@@ -13,9 +13,6 @@ export const ViolenceAgainstWomenScreen = () => {
           source={require("../../assets/logged/violencia-1.png")}
         />
       </Animatable.View>
-      <View style={styles.containerContent}>
-        <Text style={styles.title}>Tipos de violências contra a mulher</Text>
-      </View>
       <Accordion data={dateViolenceAgainstWomen} />
     </SafeAreaView>
   );

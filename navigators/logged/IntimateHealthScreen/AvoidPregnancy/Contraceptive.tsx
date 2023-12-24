@@ -7,26 +7,18 @@ import {
   View,
   Dimensions,
 } from "react-native";
-import ZoomableImage from "../../../../components/ZoomableImage";
 
 export const ContraceptiveScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <View style={styles.containerContent}>
-          <Image
-            style={styles.imagesHome}
-            source={require("../../../../assets/logged/esperma.png")}
-          />
-          <Text style={styles.title}>
-            Quer evitar a gravidez? Aprenda aqui!
-          </Text>
-        </View>
         <View style={styles.infoContainer}>
-          <Image
-            style={styles.imagesHome}
-            source={require("../../../../assets/logged/contraceptive.png")}
-          />
+          <View style={styles.containerImage}>
+            <Image
+              style={styles.image}
+              source={require("../../../../assets/logged/contraceptive.png")}
+            />
+          </View>
           <View style={styles.textInfoContainer}>
             <Text style={{ color: "black", fontSize: 16, fontWeight: "600" }}>
               Anticoncepcional hormonal
@@ -71,7 +63,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     paddingTop: 40,
-    paddingBottom: 10
+    paddingBottom: 10,
   },
   content: {
     alignItems: "center",
@@ -90,9 +82,12 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     paddingBottom: 30,
   },
-  imagesHome: {
+  image: {
     width: 60,
     height: 60,
+  },
+  containerImage: {
+    paddingTop: 20,
   },
   infoContainer: {
     flexDirection: "column",

@@ -12,6 +12,7 @@ export const useFocusedInput = ({ borderColorInput }: useFocusedInputProps) => {
     input: {
       borderColor: isFocused ? borderColorInput : "#888",
       borderWidth: 1,
+      height: 48,
     },
   });
 

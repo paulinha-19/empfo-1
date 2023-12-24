@@ -68,7 +68,7 @@ export const datePsychologicalSupport = [
       {
         title: "URCA:",
         id: 15,
-        nameUniversity: "CÍRCULO PSICANALÍTICO DO RIO DE JANEIRO",
+        nameUniversity: "INSTITUTO DE PSICOLOGIA - UFRJ",
         address:
           "Avenida Pasteur, 250 - Pavilhão Nilton Campos. Campus da Praia Vermelha",
         phone: [{ number: "(21) 2295-8113" }],

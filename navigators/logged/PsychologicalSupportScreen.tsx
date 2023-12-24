@@ -13,11 +13,6 @@ export const PsychologicalSupportScreen = () => {
         />
       </Animatable.View>
       <View style={styles.content}>
-        <View style={styles.containerContent}>
-          <Text style={styles.title}>
-            Onde buscar apoio psicologico gratuito
-          </Text>
-        </View>
         <CardRoot />
       </View>
     </SafeAreaView>

@@ -12,20 +12,13 @@ export const WomanScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <View style={styles.containerContent}>
-          <Image
-            style={styles.imagesHome}
-            source={require("../../../../assets/logged/esperma.png")}
-          />
-          <Text style={styles.title}>
-            Quer evitar a gravidez? Aprenda aqui!
-          </Text>
-        </View>
         <View style={styles.infoContainer}>
-          <Image
-            style={styles.imagesHome}
-            source={require("../../../../assets/logged/preservativo-feminino.png")}
-          />
+          <View style={styles.containerImage}>
+            <Image
+              style={styles.image}
+              source={require("../../../../assets/logged/preservativo-feminino.png")}
+            />
+          </View>
           <View style={styles.textInfoContainer}>
             <Text style={{ color: "black", fontSize: 16, fontWeight: "600" }}>
               Preservativo feminino
@@ -81,15 +74,18 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 15,
   },
-  imagesHome: {
+  image: {
     width: 60,
     height: 60,
+  },
+  containerImage: {
+    paddingTop: 20,
   },
   infoContainer: {
     flexDirection: "column",
     alignItems: "center",
   },
-  textInfoContainer: { backgroundColor: "#73BDA8", padding: 10 },
+  textInfoContainer: { backgroundColor: "#73BDA8", padding: 10, marginTop: 10},
   containerCapation: {
     width: "50%",
   },

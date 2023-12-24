@@ -5,35 +5,20 @@ import {
   Image,
   StyleSheet,
   View,
-  ScrollView,
   Dimensions,
 } from "react-native";
-import ZoomableImage from "../../../../components/ZoomableImage";
 
 export const DiuScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Animatable.View animation="fadeInLeft" style={styles.logoHome}>
-        <Image
-          style={styles.sizeHeader}
-          source={require("../../../../assets/home/penties.png")}
-        />
-      </Animatable.View> */}
       <View style={styles.content}>
-        <View style={styles.containerContent}>
-          <Image
-            style={styles.imagesHome}
-            source={require("../../../../assets/logged/esperma.png")}
-          />
-          <Text style={styles.title}>
-            Quer evitar a gravidez? Aprenda aqui!
-          </Text>
-        </View>
         <View style={styles.infoContainer}>
-          <Image
-            style={styles.imagesHome}
-            source={require("../../../../assets/logged/diu.png")}
-          />
+          <View style={styles.containerImage}>
+            <Image
+              style={styles.image}
+              source={require("../../../../assets/logged/diu.png")}
+            />
+          </View>
           <View style={styles.textInfoContainer}>
             <Text style={{ color: "black", fontSize: 16, fontWeight: "600" }}>
               Diu
@@ -74,12 +59,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 20,
   },
-  containerContent: {
-    flexDirection: "row",
-    alignItems: "center",
-    paddingTop: 40,
-    paddingBottom: 10,
-  },
   content: {
     alignItems: "center",
     width: "100%",
@@ -97,9 +76,12 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     paddingBottom: 30,
   },
-  imagesHome: {
+  image: {
     width: 60,
     height: 60,
+  },
+  containerImage: {
+    paddingTop: 40,
   },
   infoContainer: {
     flexDirection: "column",
@@ -108,7 +90,7 @@ const styles = StyleSheet.create({
   textInfoContainer: {
     backgroundColor: "#73BDA8",
     padding: 10,
-    marginTop: 10,
+    marginTop: 20,
   },
   howUseTitle: {
     color: "#f4f412",

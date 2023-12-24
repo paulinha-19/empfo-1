@@ -39,7 +39,7 @@ export const dateIntimateHealthProblem = [
       {
         id: 6,
         body: "No Brasil, mesmo sem a presença dos pais ou responsáveis, os adolescentes a partir de 12 anos podem procurar a unidade de saúde mais próxima para se informar sobre os cuidados em saúde, e em conversa com os profissionais de saúde, podem diminuir dúvidas e ansiedade, tornando-se mais seguros",
-        text: " ",
+        text: "",
       },
     ],
   },
