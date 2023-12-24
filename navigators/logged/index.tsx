@@ -29,13 +29,19 @@ function Logged() {
       <Stack.Screen
         name="AskForHelp"
         component={Screens.AskForHelp}
-        options={{ title: "Precisa de ajuda?" }}
+        options={{
+          title: "Precisa de ajuda?",
+          headerTitleStyle: { fontSize: 16 },
+        }}
       />
       <Stack.Group>
         <Stack.Screen
           name="IntimateHealth"
           component={Screens.IntimateHealth}
-          options={{ title: "Saúde íntima" }}
+          options={{
+            title: "Saúde íntima",
+            headerTitleStyle: { fontSize: 16 },
+          }}
         />
         <Stack.Screen
           name="MenstrualCycle"
@@ -56,43 +62,68 @@ function Logged() {
           <Stack.Screen
             name="AvoidPregnancy"
             component={Screens.AvoidPregnancy}
-            options={{ title: "" }}
+            options={{
+              title: "Aprenda a evitar a gradivez",
+              headerTitleStyle: { fontSize: 16 },
+            }}
           />
           <Stack.Screen
             name="Men"
             component={Screens.Men}
-            options={{ title: "" }}
+            options={{
+              title: "Aprenda a evitar a gradivez",
+              headerTitleStyle: { fontSize: 16 },
+            }}
           />
           <Stack.Screen
             name="Woman"
             component={Screens.Woman}
-            options={{ title: "" }}
+            options={{
+              title: "Aprenda a evitar a gradivez",
+              headerTitleStyle: { fontSize: 16 },
+            }}
           />
           <Stack.Screen
             name="Contraceptive"
             component={Screens.Contraceptive}
-            options={{ title: "" }}
+            options={{
+              title: "Aprenda a evitar a gradivez",
+              headerTitleStyle: { fontSize: 16 },
+            }}
           />
           <Stack.Screen
             name="Diu"
             component={Screens.Diu}
-            options={{ title: "" }}
+            options={{
+              title: "Aprenda a evitar a gradivez",
+              headerTitleStyle: { fontSize: 16 },
+            }}
           />
         </Stack.Group>
       </Stack.Group>
       <Stack.Screen
         name="Mapa"
-        options={{ title: "Peça ajuda", headerShown: false }}
+        options={{
+          title: "Peça ajuda",
+          headerShown: false,
+          headerTitleStyle: { fontSize: 16 },
+        }}
         component={Screens.Mapa}
       />
       <Stack.Screen
         name="ViolenceAgainstWomen"
-        options={{ title: "" }}
+        options={{
+          title: "Tipos de violências contra a mulher",
+          headerTitleStyle: { fontSize: 16 },
+        }}
         component={Screens.ViolenceAgainstWomen}
       />
       <Stack.Screen
         name="PsychologicalSupport"
-        options={{ title: "" }}
+        options={{
+          title: "Onde buscar apoio psicológico?",
+          headerTitleStyle: { fontSize: 16 },
+        }}
         component={Screens.PsychologicalSupport}
       />
       <Stack.Screen

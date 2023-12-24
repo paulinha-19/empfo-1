@@ -21,15 +21,6 @@ export const AvoidPregnancyScreen = () => {
         />
       </Animatable.View>
       <View style={styles.content}>
-        <View style={styles.containerContent}>
-          <Image
-            style={styles.imagesHome}
-            source={require("../../../../assets/logged/esperma.png")}
-          />
-          <Text style={styles.title}>
-            Quer evitar a gravidez? Aprenda aqui!
-          </Text>
-        </View>
         <Text style={styles.subtitle}>
           No Brasil, mesmo sem a presença dos pais ou responsáveis, os
           adolescentes a partir de 12 anos podem procurar a unidade de saúde
@@ -85,8 +76,9 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 16,
     textAlign: "center",
-    marginHorizontal: 50,
     paddingBottom: 30,
+    paddingStart: 30,
+    paddingEnd: 30
   },
   imagesHome: {
     width: 60,

@@ -1,5 +1,4 @@
 import {
-  Alert,
   Modal,
   StyleSheet,
   Pressable,
@@ -36,7 +35,6 @@ export const ButtonDirection = ({
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-          Alert.alert("Modal foi fechado");
           setModalVisible(!modalVisible);
         }}
       >
@@ -51,7 +49,7 @@ export const ButtonDirection = ({
               style={[style.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
             >
-              <AntDesign name="left" size={30} color="black" />
+              <AntDesign name="left" size={40} color="black" />
             </Pressable>
           </View>
         </View>
@@ -91,5 +89,7 @@ const style = StyleSheet.create({
     position: "absolute",
     top: 50,
     left: 10,
+    height: 48,
+    width: 48,
   },
 });

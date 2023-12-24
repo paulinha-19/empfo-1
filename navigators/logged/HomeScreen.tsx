@@ -96,7 +96,7 @@ export const HomeScreen = () => {
               source={require("../../assets/logged/psicologico-2.png")}
             />
             <Text style={styles.textColor}>
-              Tá precisando de um apoio psicológico?
+              Tá precisando de um apoio psicológico? Clique aqui
             </Text>
           </View>
         </TouchableOpacity>

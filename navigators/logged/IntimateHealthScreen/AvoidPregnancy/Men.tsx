@@ -5,7 +5,6 @@ import {
   Image,
   StyleSheet,
   View,
-  ScrollView,
   Dimensions,
 } from "react-native";
 import ZoomableImage from "../../../../components/ZoomableImage";
@@ -13,27 +12,14 @@ import ZoomableImage from "../../../../components/ZoomableImage";
 export const MenScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Animatable.View animation="fadeInLeft" style={styles.logoHome}>
-        <Image
-          style={styles.sizeHeader}
-          source={require("../../../../assets/home/penties.png")}
-        />
-      </Animatable.View> */}
       <View style={styles.content}>
-        <View style={styles.containerContent}>
-          <Image
-            style={styles.imagesHome}
-            source={require("../../../../assets/logged/esperma.png")}
-          />
-          <Text style={styles.title}>
-            Quer evitar a gravidez? Aprenda aqui!
-          </Text>
-        </View>
         <View style={styles.infoContainer}>
-          <Image
-            style={styles.imagesHome}
-            source={require("../../../../assets/logged/preservativo-masculino.png")}
-          />
+          <View style={styles.containerImage}>
+            <Image
+              style={styles.image}
+              source={require("../../../../assets/logged/preservativo-masculino.png")}
+            />
+          </View>
           <View style={styles.textInfoContainer}>
             <Text style={{ color: "black", fontSize: 16, fontWeight: "600" }}>
               Preservativo masculino
@@ -47,7 +33,9 @@ export const MenScreen = () => {
             como um eficiente método contraceptivo.
           </Text>
           <Text style={styles.title}>Como usar a camisinha masculina?</Text>
-          <ZoomableImage source={require("../../../../assets/logged/man.png")} />
+          <ZoomableImage
+            source={require("../../../../assets/logged/man.png")}
+          />
           <View style={styles.containerCapation}>
             <Text style={styles.caption}>
               Caderneta de Saúde do Adolescente Ministério da Saúde
@@ -64,11 +52,6 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     height: "100%",
-  },
-  containerContent: {
-    flexDirection: "row",
-    alignItems: "center",
-    paddingTop: 20,
   },
   content: {
     alignItems: "center",
@@ -87,9 +70,12 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     paddingBottom: 20,
   },
-  imagesHome: {
+  image: {
     width: 60,
     height: 60,
+  },
+  containerImage: {
+    paddingTop: 20,
   },
   infoContainer: {
     flexDirection: "column",
