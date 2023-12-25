@@ -22,7 +22,7 @@ import { AxiosError } from "axios";
 import { useAuth } from "../../hooks/useAuth";
 
 export const ForgotPasswordScreen = () => {
-  const { forgotPassword} = useAuth();
+  const { forgotPassword } = useAuth();
   const navigation = useNavigation<StackTypes>();
   const {
     control,
@@ -51,7 +51,7 @@ export const ForgotPasswordScreen = () => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <SafeAreaView style={styles.mainContainer}>
-        <View style={{ padding: 20 }}>
+        <View style={{ padding: 20, marginTop: 30 }}>
           <Pressable onPress={() => navigation.goBack()}>
             <AntDesign name="leftcircleo" size={30} color="white" />
           </Pressable>

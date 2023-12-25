@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "empfo-1",
-    "slug": "empfo-1",
-    "version": "1.0.6",
+    "name": "EMPFO",
+    "slug": "EMPFO",
+    "version": "1.0.7",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -23,7 +23,7 @@
       }
     },
     "android": {
-      "versionCode": 6,
+      "versionCode": 7,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"

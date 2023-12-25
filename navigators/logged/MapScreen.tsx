@@ -91,10 +91,10 @@ export default function MapScreen() {
 
   useEffect(() => {
     const getPermissions = async () => {
-      const permission = await Location.getForegroundPermissionsAsync();
+      let permission = await Location.requestForegroundPermissionsAsync();
       if (!permission.canAskAgain || permission.status === "denied") {
         Alert.alert(
-          "Por favor conceda acesso a localização para navegar pelo mapa"
+          "Por favor, conceda acesso a localização para navegar pelo mapa"
         );
         Linking.openSettings();
       } else {
@@ -104,7 +104,6 @@ export default function MapScreen() {
             accuracy: Location.Accuracy.High,
           });
           setCurrentLocation(location);
-          console.log(location);
         }
       }
     };
