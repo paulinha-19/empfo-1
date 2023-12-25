@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
   },
   containerImage: {
     alignItems: "center",
-    marginTop: 15,
+    marginTop: 30,
   },
   image: {
     width: "50%",
