@@ -5,6 +5,7 @@ import {
 } from "react-native-google-places-autocomplete";
 import { ListEmptyComponent } from "../GooglePlacesInput/ListEmptyComponent";
 import { useFocusedInput } from "../../hooks/useFocusedInput";
+import {API_KEY_GOOGLE_MAPS} from "@env"
 
 type InputAutocompleteProps = {
   label: string;
@@ -38,7 +39,7 @@ function InputAutocompleteDirection({
           onPlaceSelected(details);
         }}
         query={{
-          key: `AIzaSyD0xFYq39zmE-wAV3xmMMibLAS_hlWast4`,
+          key: API_KEY_GOOGLE_MAPS,
           language: "pt-BR",
           radius: "30000",
         }}

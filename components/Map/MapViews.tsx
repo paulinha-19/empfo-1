@@ -7,6 +7,8 @@ import { View, ActivityIndicator, Alert } from "react-native";
 import { useMapStore } from "../../store/map-directions";
 import MapViewDirections from "react-native-maps-directions";
 import { MapDirectionsResponse } from "react-native-maps-directions";
+import {API_KEY_GOOGLE_MAPS} from "@env"
+
 
 interface MapViewsProps {
   mapRef: React.MutableRefObject<MapView | null>;
@@ -110,7 +112,7 @@ export const MapViews = ({
             <MapViewDirections
               origin={origin}
               destination={destination}
-              apikey={`AIzaSyD0xFYq39zmE-wAV3xmMMibLAS_hlWast4`}
+              apikey={API_KEY_GOOGLE_MAPS}
               strokeColor="#6644ff"
               strokeWidth={4}
               onReady={(args) => traceRouteOnReady(args)}
