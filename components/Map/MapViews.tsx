@@ -110,7 +110,7 @@ export const MapViews = ({
             <MapViewDirections
               origin={origin}
               destination={destination}
-              apikey={`AIzaSyD0xFYq39zmE-wAV3xmMMibLAS_hlWast4`}
+              apikey={`AIzaSyA53wVZQ_P0On1BZg5ncJidA-YkYQREErI`}
               strokeColor="#6644ff"
               strokeWidth={4}
               onReady={(args) => traceRouteOnReady(args)}
