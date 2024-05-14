@@ -5,6 +5,7 @@ import {
 } from "react-native-google-places-autocomplete";
 import { LocationObject } from "expo-location";
 import { ListEmptyComponent } from "./ListEmptyComponent";
+import {API_KEY_GOOGLE_MAPS} from "@env"
 
 interface GooglePlacesInputProps {
   currentLocation?: LocationObject | null | undefined;

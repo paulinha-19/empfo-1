@@ -7,6 +7,8 @@ import { View, ActivityIndicator, Alert } from "react-native";
 import { useMapStore } from "../../store/map-directions";
 import MapViewDirections from "react-native-maps-directions";
 import { MapDirectionsResponse } from "react-native-maps-directions";
+import {API_KEY_GOOGLE_MAPS} from "@env"
+
 
 interface MapViewsProps {
   mapRef: React.MutableRefObject<MapView | null>;

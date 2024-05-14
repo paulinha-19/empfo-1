@@ -5,6 +5,7 @@ import {
 } from "react-native-google-places-autocomplete";
 import { ListEmptyComponent } from "../GooglePlacesInput/ListEmptyComponent";
 import { useFocusedInput } from "../../hooks/useFocusedInput";
+import {API_KEY_GOOGLE_MAPS} from "@env"
 
 type InputAutocompleteProps = {
   label: string;

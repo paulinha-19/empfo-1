@@ -4,6 +4,7 @@ import { addMarkersToMap } from "./map-functions";
 import { LocationObject } from "expo-location";
 import { LatLng } from "react-native-maps";
 import { Alert } from "react-native";
+import {API_KEY_GOOGLE_MAPS} from "@env"
 
 export const searchPoliceStations = async (
   currentLocation: LocationObject | null | undefined,
