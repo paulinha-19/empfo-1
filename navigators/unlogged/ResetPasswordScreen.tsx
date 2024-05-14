@@ -81,7 +81,7 @@ export const ResetPasswordScreen = () => {
             labelStyle={{ fontSize: 18 }}
             placeholderColor="gray"
             label="Senha"
-            secureTextEntry={showPassword}
+            secureTextEntry={!showPassword}
             leftIcon={<Ionicons name="lock-closed" size={24} color="white" />}
             rightIcon={
               <Ionicons
@@ -92,7 +92,8 @@ export const ResetPasswordScreen = () => {
               />
             }
             errorMessage={errors?.newPassword?.message}
-            borderColorInput="white"
+            borderColorInputFocus="white"
+            borderColorInputBlur="white"
             inputTextColor="white"
           />
         </View>
@@ -126,12 +127,12 @@ const styles = StyleSheet.create({
   },
   containerButtonSubmit: {
     padding: 15,
-    backgroundColor: "#5E17EB",
+    backgroundColor: "#FED74D",
     marginHorizontal: 20,
     marginTop: 15,
   },
   textButtonSubmit: {
-    color: "white",
+    color: "black",
     textAlign: "center",
   },
   textReset: {

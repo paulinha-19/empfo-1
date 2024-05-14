@@ -10,7 +10,6 @@ import {
   TouchableWithoutFeedback,
   Alert,
 } from "react-native";
-import * as SecureStore from "expo-secure-store";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import * as Animatable from "react-native-animatable";
 import { useForm } from "react-hook-form";
@@ -89,6 +88,8 @@ export const LoginScreen = () => {
               keyboardType="email-address"
               leftIcon={<MaterialIcons name="email" size={26} color="black" />}
               errorMessage={errors?.email?.message}
+              borderColorInputFocus="#FED74D"
+              borderColorInputBlur="black"
             />
             <View style={styles.contentInput}>
               <ControlledInput
@@ -98,7 +99,7 @@ export const LoginScreen = () => {
                 labelStyle={{ fontSize: 18 }}
                 placeholderColor="gray"
                 label="Senha"
-                secureTextEntry={showPassword}
+                secureTextEntry={!showPassword}
                 leftIcon={
                   <Ionicons name="lock-closed" size={24} color="black" />
                 }
@@ -111,6 +112,8 @@ export const LoginScreen = () => {
                   />
                 }
                 errorMessage={errors?.password?.message}
+                borderColorInputFocus="#FED74D"
+                borderColorInputBlur="black"
               />
             </View>
             <View style={styles.containerForgotPassword}>
@@ -163,7 +166,7 @@ const styles = StyleSheet.create({
   borderInputs: {
     borderStyle: "solid",
     borderWidth: 1,
-    borderColor: "#5E17EB",
+    borderColor: "#FED74D",
   },
   textColor: {
     color: "white",
@@ -185,12 +188,12 @@ const styles = StyleSheet.create({
     marginVertical: 18,
   },
   forgotPasswordLink: {
-    color: "#5E17EB",
+    color: "#000",
     fontSize: 16,
   },
-  buttonSubmit: { padding: 15, backgroundColor: "#5E17EB" },
+  buttonSubmit: { padding: 15, backgroundColor: "#FED74D" },
   textButtonSubmit: {
-    color: "white",
+    color: "black",
     textAlign: "center",
   },
   containerCreateAccout: {
@@ -199,7 +202,7 @@ const styles = StyleSheet.create({
     paddingTop: 15,
   },
   textClickHere: {
-    color: "#5E17EB",
+    color: "#000",
     fontSize: 16,
     paddingStart: 5,
   },

@@ -81,7 +81,8 @@ export const TokenPasswordScreen = () => {
                 <MaterialIcons name="vpn-key" size={24} color="white" />
               }
               errorMessage={errors?.token?.message}
-              borderColorInput="white"
+              borderColorInputFocus="#FED74D"
+              borderColorInputBlur="white"
               inputTextColor="white"
             />
           </View>
@@ -126,12 +127,12 @@ const styles = StyleSheet.create({
   },
   containerButtonSubmit: {
     padding: 15,
-    backgroundColor: "#5E17EB",
+    backgroundColor: "#FED74D",
     marginHorizontal: 20,
     marginTop: 15,
   },
   textButtonSubmit: {
-    color: "white",
+    color: "black",
     textAlign: "center",
   },
 });
