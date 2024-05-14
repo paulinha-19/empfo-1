@@ -30,7 +30,7 @@ const GooglePlacesInput = ({
       }}
       query={{
         // Consulta personalizada para a API do Google Places
-        key: API_KEY_GOOGLE_MAPS,
+        key: `AIzaSyA53wVZQ_P0On1BZg5ncJidA-YkYQREErI`,
         language: "pt-br",
         radius: "15000",
       }}

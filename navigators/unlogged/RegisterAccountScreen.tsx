@@ -43,7 +43,6 @@ export const RegisterAccountScreen = () => {
   const onSubmit = async (data: RegisterData) => {
     try {
       await onRegister(data);
-      console.log("Usuário registrado:", data);
       reset();
       navigation.navigate("Login");
     } catch (error) {
@@ -81,7 +80,8 @@ export const RegisterAccountScreen = () => {
               keyboardType="email-address"
               leftIcon={<MaterialIcons name="email" size={26} color="white" />}
               errorMessage={errors?.email?.message}
-              borderColorInput="white"
+              borderColorInputFocus="#FED74D"
+              borderColorInputBlur="white"
               inputTextColor="white"
             />
             <ControlledInput
@@ -91,7 +91,7 @@ export const RegisterAccountScreen = () => {
               labelStyle={{ fontSize: 18 }}
               placeholderColor="gray"
               label="Senha"
-              secureTextEntry={showPassword}
+              secureTextEntry={!showPassword}
               leftIcon={<Ionicons name="lock-closed" size={24} color="white" />}
               rightIcon={
                 <Ionicons
@@ -102,7 +102,8 @@ export const RegisterAccountScreen = () => {
                 />
               }
               errorMessage={errors?.password?.message}
-              borderColorInput="white"
+              borderColorInputFocus="#FED74D"
+              borderColorInputBlur="white"
               inputTextColor="white"
             />
           </View>
@@ -163,12 +164,12 @@ const styles = StyleSheet.create({
   },
   buttonSubmit: {
     padding: 15,
-    backgroundColor: "#5E17EB",
+    backgroundColor: "#FED74D",
     marginHorizontal: 20,
     marginTop: 15,
   },
   textButtonSubmit: {
-    color: "white",
+    color: "black",
     textAlign: "center",
   },
   containerCreateAccout: {

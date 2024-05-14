@@ -26,7 +26,7 @@ export const searchPoliceStations = async (
       : currentLocation?.coords.longitude || 0;
 
     const response = await axios.get(
-      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=5000&type=police&key=${API_KEY_GOOGLE_MAPS}`
+      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=5000&type=police&key=AIzaSyA53wVZQ_P0On1BZg5ncJidA-YkYQREErI`
     );
     const filteredPolice: GooglePlace[] = response.data.results.filter(
       (place: GooglePlace) => place.name?.toLowerCase().includes("delegacia")
@@ -66,7 +66,7 @@ export const searchHospitals = async (
       : currentLocation?.coords.longitude || 0;
 
     const response = await axios.get(
-      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=5000&type=hospital&key=${API_KEY_GOOGLE_MAPS}`
+      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=5000&type=hospital&key=AIzaSyA53wVZQ_P0On1BZg5ncJidA-YkYQREErI`
     );
     if (response.data.results.length > 0) {
       const places: GooglePlace[] = response.data.results;

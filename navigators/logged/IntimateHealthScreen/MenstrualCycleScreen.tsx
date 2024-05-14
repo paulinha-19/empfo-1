@@ -46,6 +46,14 @@ export const MenstrualCycleScreen = () => {
 
   const calculateDates = () => {
     if (lastMenstruationDate && cycleDuration) {
+      if (
+        !isValid(parse(lastMenstruationDate, "dd/MM/yyyy", new Date())) ||
+        lastMenstruationDateError
+      ) {
+        setLastMenstruationDateError("Data inválida ou maior que a data atual");
+        return;
+      }
+
       const parsedDate = parse(lastMenstruationDate, "dd/MM/yyyy", new Date());
       const nextDate = new Date(parsedDate);
       nextDate.setDate(parsedDate.getDate() + parseInt(cycleDuration, 10));
@@ -65,6 +73,7 @@ export const MenstrualCycleScreen = () => {
       setModalVisible(true);
       setCycleDuration("");
       setLastMenstruationDate("");
+      setLastMenstruationDateError("");
       Keyboard.dismiss();
     } else {
       alert("Por favor, preencha todos os campos");
@@ -72,6 +81,7 @@ export const MenstrualCycleScreen = () => {
       setFertilePeriod("");
     }
   };
+
   const handleDateChange = (text: string) => {
     setLastMenstruationDate(text);
     if (
@@ -79,10 +89,10 @@ export const MenstrualCycleScreen = () => {
       isBefore(parse(text, "dd/MM/yyyy", new Date()), new Date())
     ) {
       setLastMenstruationDateError("");
+    } else if (text === "") {
+      setLastMenstruationDateError("");
     } else {
-      setLastMenstruationDateError(
-        "Data inválida ou maior que a data atual. Use o formato dd/mm/aaaa."
-      );
+      setLastMenstruationDateError("Data inválida ou maior que a data atual");
     }
   };
 
@@ -109,17 +119,25 @@ export const MenstrualCycleScreen = () => {
             fértil.
           </Text>
           <CustomInput
-            label="Qual dia começou sua última menstruação?"
-            labelStyle={{ color: "white", fontSize: 15, paddingStart:5 }}
+            label="Qual data começou sua última menstruação?"
+            labelStyle={{ color: "white", fontSize: 15, paddingStart: 5 }}
             style={styles.input}
-            placeholder="Insira a data no formato dia/mês/ano"
+            placeholder="dd/mm/aaaa"
             value={lastMenstruationDate}
             onChangeText={(text) => handleDateChange(text)}
             errorMessage={lastMenstruationDateError}
+            setLastMenstruationDate={setLastMenstruationDate}
+            mask="DD/MM/YYYY"
+            lastMenstruationDate={lastMenstruationDate}
           />
           <CustomInput
             label="Quantos dias costuma durar sua menstruação?"
-            labelStyle={{ color: "white", fontSize: 15, paddingTop: 10, paddingStart:5 }}
+            labelStyle={{
+              color: "white",
+              fontSize: 15,
+              paddingTop: 10,
+              paddingStart: 5,
+            }}
             style={styles.input}
             placeholder="28 dias"
             value={cycleDuration}
@@ -194,7 +212,6 @@ const styles = StyleSheet.create({
   containerContent: {
     flexDirection: "row",
     alignItems: "center",
-    
     gap: 15,
   },
   content: {
@@ -221,6 +238,7 @@ const styles = StyleSheet.create({
   input: {
     paddingStart: 5,
     fontSize: 16,
+    backgroundColor: "white",
   },
   dataResult: {
     color: "#f00000",

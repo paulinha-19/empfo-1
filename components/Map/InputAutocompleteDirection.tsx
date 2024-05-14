@@ -39,7 +39,7 @@ function InputAutocompleteDirection({
           onPlaceSelected(details);
         }}
         query={{
-          key: API_KEY_GOOGLE_MAPS,
+          key: `AIzaSyA53wVZQ_P0On1BZg5ncJidA-YkYQREErI`,
           language: "pt-BR",
           radius: "30000",
         }}

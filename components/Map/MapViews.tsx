@@ -112,7 +112,7 @@ export const MapViews = ({
             <MapViewDirections
               origin={origin}
               destination={destination}
-              apikey={API_KEY_GOOGLE_MAPS}
+              apikey={`AIzaSyA53wVZQ_P0On1BZg5ncJidA-YkYQREErI`}
               strokeColor="#6644ff"
               strokeWidth={4}
               onReady={(args) => traceRouteOnReady(args)}
