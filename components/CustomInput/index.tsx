@@ -6,6 +6,7 @@ import {
   View,
   StyleSheet,
 } from "react-native";
+import { TextInputMask } from "react-native-masked-text";
 
 type LabelStyle = {
   color?: string;
@@ -28,10 +29,13 @@ interface CustomInputProps extends TextInputProps {
   placeholderColor?: string;
   inputTextColor?: string;
   borderColorInput?: string;
+  setLastMenstruationDate?: React.Dispatch<React.SetStateAction<string>>;
+  mask?: string;
+  lastMenstruationDate?: string;
 }
 
 export function CustomInput({
-  label='',
+  label = "",
   labelStyle,
   errorMessage,
   errorColor = "red",
@@ -40,27 +44,38 @@ export function CustomInput({
   placeholderColor,
   inputTextColor,
   borderColorInput,
+  setLastMenstruationDate,
+  mask,
+  lastMenstruationDate,
   ...textInputProps
 }: CustomInputProps) {
   return (
     <View style={styles.container}>
       {label && <Text style={[labelStyle]}>{label}</Text>}
-      <TextInput
-        {...textInputProps}
-        placeholderTextColor={placeholderColor}
-        style={[
-          { color: inputTextColor },
-          textInputProps.style,
-          styles.input,
-          { borderColor: borderColorInput },
-        ]}
-      />
+      {mask ? (
+        <TextInputMask
+          type={"datetime"}
+          options={{
+            format: mask,
+          }}
+          onChangeText={(text) => setLastMenstruationDate(text)}
+          placeholderTextColor={placeholderColor}
+          {...textInputProps}
+          style={[styles.input, textInputProps.style]}
+        />
+      ) : (
+        <TextInput
+          {...textInputProps}
+          placeholderTextColor={placeholderColor}
+          style={[textInputProps.style, styles.input]}
+        />
+      )}
       {errorMessage && (
         <Text
           style={{
             color: errorColor,
             paddingTop: paddingTop | 2,
-            paddingBottom: paddingBottom
+            paddingBottom: paddingBottom,
           }}
         >
           {errorMessage}
