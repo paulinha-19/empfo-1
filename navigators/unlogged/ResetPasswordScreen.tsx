@@ -57,7 +57,7 @@ export const ResetPasswordScreen = () => {
 
   return (
     <SafeAreaView style={styles.mainContainer}>
-      <View style={{ padding: 20 }}>
+      <View style={{ padding: 20, marginTop: 30 }}>
         <Pressable onPress={() => navigation.goBack()}>
           <AntDesign name="leftcircleo" size={30} color="white" />
         </Pressable>
