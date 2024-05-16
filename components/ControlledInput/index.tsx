@@ -24,7 +24,8 @@ type AditionalInput = {
   paddingTop?: number;
   placeholderColor?: string;
   inputTextColor?: string;
-  borderColorInput?: string;
+  borderColorInputFocus?: string;
+  borderColorInputBlur?: string;
 } & TextInputProps;
 
 export function ControlledInput<FormType extends FieldValues>({
@@ -40,7 +41,8 @@ export function ControlledInput<FormType extends FieldValues>({
   labelStyle,
   placeholderColor,
   inputTextColor,
-  borderColorInput,
+  borderColorInputFocus,
+  borderColorInputBlur,
   ...textInputProps
 }: UseControllerProps<FormType> & AditionalInput) {
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -52,6 +54,7 @@ export function ControlledInput<FormType extends FieldValues>({
   const handleBlur = () => {
     setIsFocused(false);
   };
+  
   return (
     <Controller
       control={control}
@@ -74,7 +77,7 @@ export function ControlledInput<FormType extends FieldValues>({
             style={[
               {
                 color: inputTextColor,
-                borderColor: isFocused ? "#5E17EB" : borderColorInput,
+                borderColor: isFocused ? borderColorInputFocus : borderColorInputBlur,
               },
               textInputProps.style,
               styles.input,
