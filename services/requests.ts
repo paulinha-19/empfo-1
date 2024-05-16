@@ -15,11 +15,13 @@ export const signInRequest = async (data: AuthData) => {
   } catch (error) {
     const errors = error as AxiosError;
     let errorMessage = "";
-    errorMessage = (errors.response.data as ErrorResponse).message;
     if (errors.response && errors.response.data) {
+      errorMessage = (errors.response.data as ErrorResponse).message;
       Alert.alert(errorMessage);
+      throw new Error(errorMessage);
     } else {
       Alert.alert(errors?.message);
+      throw new Error(errors?.message);
     }
   }
 };
@@ -34,9 +36,12 @@ export const RegisterRequest = async (data: RegisterData) => {
   } catch (error) {
     const errors = error as AxiosError;
     let errorMessage = "";
-    errorMessage = (errors.response.data as ErrorResponse).message;
-    if (errorMessage) {
-      Alert.alert(errorMessage);
+    if (errors.response && errors.response.data) {
+      errorMessage = (errors.response.data as ErrorResponse).message;
+      throw new Error(errorMessage);
+    } else {
+      Alert.alert(errors?.message);
+      throw new Error(errors?.message);
     }
   }
 };
@@ -56,8 +61,10 @@ export const forgotPasswordRequest = async (data: ForgotPasswordData) => {
     if (errors.response && errors.response.data) {
       errorMessage = (errors.response.data as ErrorResponse).message;
       Alert.alert(errorMessage);
+      throw new Error(errorMessage);
     } else {
       Alert.alert(errors?.message);
+      throw new Error(errors?.message);
     }
   }
 };
@@ -77,8 +84,10 @@ export const tokenPasswordRequest = async (data: TokenData) => {
     if (errors.response && errors.response.data) {
       errorMessage = (errors.response.data as ErrorResponse).message;
       Alert.alert(errorMessage);
+      throw new Error(errorMessage);
     } else {
       Alert.alert(errors?.message);
+      throw new Error(errors?.message);
     }
   }
 };
@@ -100,8 +109,10 @@ export const resetPasswordRequest = async (
     if (errors.response && errors.response.data) {
       errorMessage = (errors.response.data as ErrorResponse).message;
       Alert.alert(errorMessage);
+      throw new Error(errorMessage);
     } else {
       Alert.alert(errors?.message);
+      throw new Error(errors?.message);
     }
   }
 };
