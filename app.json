@@ -2,7 +2,7 @@
   "expo": {
     "name": "empfo-1",
     "slug": "empfo-1",
-    "version": "1.0.13",
+    "version": "1.0.14",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -25,7 +25,7 @@
       }
     },
     "android": {
-      "versionCode": 13,
+      "versionCode": 14,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -49,6 +49,20 @@
         "expo-location",
         {
           "locationAlwaysAndWhenInUsePermission": "Permitir que o $(PRODUCT_NAME) acesse sua localização"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 34,
+            "targetSdkVersion": 34,
+            "buildToolsVersion": "34.0.0",
+            "minSdkVersion": 34
+          },
+          "ios": {
+            "deploymentTarget": "13.4"
+          }
         }
       ]
     ],
