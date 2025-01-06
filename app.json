@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "EMPFO",
-    "slug": "empfo-1",
+    "name": "empfo",
+    "slug": "empfo",
     "version": "1.0.12",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,7 +15,7 @@
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "NSLocationWhenInUseUsageDescription": "Precisamos da sua localização para exibir o mapa."
+        "NSLocationWhenInUseUsageDescription": "Precisamos da sua localização para exibir o mapa"
       },
       "config": {
         "usesNonExemptEncryption": false,
@@ -40,7 +40,7 @@
       [
         "expo-location",
         {
-          "locationAlwaysAndWhenInUsePermission": "Permitir o $(PRODUCT_NAME) acessar sua localização"
+          "locationAlwaysAndWhenInUsePermission": "Permitir que o $(PRODUCT_NAME) acesse sua localização"
         }
       ]
     ],
