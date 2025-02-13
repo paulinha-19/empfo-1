@@ -1,4 +1,4 @@
-# Sobre
+# Funcionalidades
 
 Recursos Principais:
 
@@ -22,3 +22,7 @@ Saiba quais são os tipos de violência contra a mulher
 
 7. Navegue pelo mapa:
 Consulte um lugar para buscar ajuda imediata no mapa.
+
+# Destaque
+ O app EMPFO conquistou o 2º lugar no Prêmio Transformação Digital na Saúde 2023, durante a 6ª Feira de Soluções para a Saúde organizada pela Fiocruz Brasília.
+Sobre a preniação: https://www.fiocruzbrasilia.fiocruz.br/da-ideia-ao-produto-feira-fomenta-solucoes-em-saude-digital/
